@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Automation Engineer</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>About Me</h1>
+        <a href="index.html" class="cta-button">Home</a>
+        <a href="portfolio.html" class="cta-button">View My Work</a>
+        <a href="about.html" class="cta-button">About Me</a>
+        <a href="contact.html" class="cta-button">Contact Me</a>
+    </header>
+
+    <!-- Tabs Navigation -->
+    <div class="tabs">
+        <button class="tab-button active" onclick="openTab(event, 'education')">Education</button>
+        <button class="tab-button" onclick="openTab(event, 'projects')">Projects</button>
+        <button class="tab-button" onclick="openTab(event, 'biography')">Biography</button>
+    </div>
+
+    <!-- Tab Content -->
+    <div id="education" class="tab-content active">
+        <h2>Education</h2>
+        <p>📌 **Degree**: Bachelor's/Master's in [Your Field] from [Your University]</p>
+        <p>📌 **Certifications**: Siemens Certified Automation Engineer, Six Sigma Green Belt, etc.</p>
+    </div>
+
+    <div id="projects" class="tab-content">
+        <h2>Projects</h2>
+        <p>🔹 **Smart Factory Simulation** – Optimized production efficiency using digital twins.</p>
+        <p>🔹 **Automated Assembly Line** – Designed PLC-based control systems for industrial robotics.</p>
+        <a href="portfolio.html" class="cta-button">See Full Portfolio</a>
+    </div>
+
+    <div id="biography" class="tab-content">
+        <h2>Biography</h2>
+        <p>💼 Experienced in factory automation, industrial robotics, and digital manufacturing.</p>
+        <p>🏭 Worked with Siemens, Rockwell Automation, and ABB systems.</p>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+    <footer>
+        <p>&copy; 2025 Maurice Elkouby | Automation Engineer</p>
+    </footer>
+</html>

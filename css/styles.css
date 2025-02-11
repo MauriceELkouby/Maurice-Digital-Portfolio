@@ -1,0 +1,54 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #3B3B3F;
+    color: #D9B68C;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background: linear-gradient(45deg, #C65D3B, #A0522D);
+    padding: 50px;
+    color: #D9B68C;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #7C4D3A;
+    padding: 10px 20px;
+    color: #D9B68C;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.cta-button:hover {
+    background: #A0522D;
+}
+
+/* Project Cards */
+.project-card {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    display: inline-block;
+    width: 300px;
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Contact Form */
+form {
+    background: #222;
+    padding:
