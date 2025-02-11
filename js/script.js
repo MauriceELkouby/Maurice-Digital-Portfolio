@@ -17,6 +17,12 @@ function openTab(event, tabName) {
 }
 
 // Set default tab on page load
-document.addEventListener("DOMContentLoaded", function() {
-  document.getElementById("education").style.display = "block";
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    menuToggle.addEventListener("click", function () {
+        navLinks.style.display = navLinks.style.display === "flex" ? "none" : "flex";
+    });
 });
+

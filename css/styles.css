@@ -67,7 +67,16 @@ p {
     gap: 1rem;
     align-items: center;
 }
-
+.menu-toggle {
+    display: none;
+    background: #7C4D3A;
+    color: #D9B68C;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
 .nav-button {
     background: transparent;
     color: #D9B68C;
@@ -202,33 +211,27 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    body {
-        padding: 0 1rem;
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background: #1e1e1e;
+        padding: 1rem;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
-    header {
-        padding: 2rem 1rem;
-        min-height: 200px; /* Adjusted for mobile */
+    .nav-links a {
+        display: block;
+        padding: 0.5rem;
+        text-align: center;
     }
 
-    h1 {
-        font-size: 2rem;
-    }
-
-    h2 {
-        font-size: 1.75rem;
-    }
-
-    h3 {
-        font-size: 1.5rem;
-    }
-
-    .project-card {
-        margin: 1rem auto;
-    }
-
-    .cta-button {
-        min-width: 120px; /* Adjusted for mobile */
+    .menu-toggle {
+        display: block;
     }
 }
 
