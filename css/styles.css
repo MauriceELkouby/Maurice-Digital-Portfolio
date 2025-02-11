@@ -1,54 +1,269 @@
-/* General Styling */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #3B3B3F;
-    color: #D9B68C;
-    text-align: center;
+/* Reset and Base Styles */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* Header */
-header {
-    background: linear-gradient(45deg, #C65D3B, #A0522D);
-    padding: 50px;
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background-color: #3B3B3F;
     color: #D9B68C;
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 4rem; /* Add space for fixed nav */
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: #D9B68C;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    line-height: 1.2;
 }
 
 h1 {
     font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    max-width: 70ch;
+    line-height: 1.8;
+}
+.main-nav {
+    background: #1e1e1e;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.nav-logo h3 {
+    margin: 0;
+    color: #D9B68C;
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav-button {
+    background: transparent;
+    color: #D9B68C;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    border: 2px solid transparent;
+}
+
+    .nav-button:hover {
+        background: #7C4D3A;
+        border-color: #D9B68C;
+    }
+/* Standardized Header Styling */
+header {
+    background: linear-gradient(45deg, #C65D3B, #A0522D);
+    padding: 3rem 2rem;
+    margin-bottom: 3rem;
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-height: 250px; /* Standardized minimum height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+    header p {
+        max-width: 600px;
+        margin: 1rem auto;
+        font-size: 1.2rem;
+    }
+
+/* Navigation */
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    width: 100%;
 }
 
 .cta-button {
-    display: inline-block;
     background: #7C4D3A;
-    padding: 10px 20px;
     color: #D9B68C;
     text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    border: 2px solid transparent;
+    min-width: 140px; /* Standardized button width */
+    text-align: center;
+    margin: 0.5rem;
 }
 
-.cta-button:hover {
-    background: #A0522D;
-}
+    .cta-button:hover {
+        background: #A0522D;
+        transform: translateY(-2px);
+        border-color: #D9B68C;
+    }
 
 /* Project Cards */
 .project-card {
     background: #1e1e1e;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 20px;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    max-width: 400px;
+    text-align: left;
+}
+
+    .project-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .project-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .project-card h3 {
+        margin: 1rem 0;
+    }
+
+    .project-card a {
+        color: #C65D3B;
+        text-decoration: none;
+        font-weight: 500;
+        display: inline-block;
+        margin-top: 1rem;
+        transition: color 0.3s ease;
+    }
+
+        .project-card a:hover {
+            color: #D9B68C;
+        }
+
+/* Sections */
+section {
+    margin: 4rem 0;
+    padding: 2rem;
+    background: rgba(30, 30, 30, 0.5);
+    border-radius: 1rem;
+}
+
+/* Images */
+img {
     display: inline-block;
-    width: 300px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
 }
 
-.project-card img {
-    width: 100%;
-    border-radius: 5px;
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(217, 182, 140, 0.2);
 }
 
-/* Contact Form */
-form {
-    background: #222;
-    padding:
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 0 1rem;
+    }
+
+    header {
+        padding: 2rem 1rem;
+        min-height: 200px; /* Adjusted for mobile */
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    .project-card {
+        margin: 1rem auto;
+    }
+
+    .cta-button {
+        min-width: 120px; /* Adjusted for mobile */
+    }
+}
+
+/* Grid Layout for Projects */
+#projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* Biography Section */
+#biography {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+    #biography img {
+        display: block;
+        margin: 2rem auto;
+        max-width: 300px;
+    }
+
+/* Lists */
+ul {
+    list-style-position: inside;
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+.container {
+    display: flex;
+    flex-direction: column; /* Stacks divs vertically */
+    gap: 20px; /* Creates space between divs */
+}

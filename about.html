@@ -3,48 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me | Automation Engineer</title>
+    <title>About Me | Maurice Elkouby - Automation Engineer</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
-        <h1>About Me</h1>
-        <a href="index.html" class="cta-button">Home</a>
-        <a href="portfolio.html" class="cta-button">View My Work</a>
-        <a href="about.html" class="cta-button">About Me</a>
-        <a href="contact.html" class="cta-button">Contact Me</a>
+        <h1>Biography</h1>
+        <p></p>
+        <nav>
+            <a href="index.html" class="cta-button">Home</a>
+            <a href="portfolio.html" class="cta-button">View My Work</a>
+            <a href="about.html" class="cta-button">Biography</a>
+            <a href="contact.html" class="cta-button">Contact Me</a>
+        </nav>
     </header>
 
-    <!-- Tabs Navigation -->
-    <div class="tabs">
-        <button class="tab-button active" onclick="openTab(event, 'education')">Education</button>
-        <button class="tab-button" onclick="openTab(event, 'projects')">Projects</button>
-        <button class="tab-button" onclick="openTab(event, 'biography')">Biography</button>
-    </div>
+    <main>
+        <section id="biography">
 
-    <!-- Tab Content -->
-    <div id="education" class="tab-content active">
-        <h2>Education</h2>
-        <p>📌 **Degree**: Bachelor's/Master's in [Your Field] from [Your University]</p>
-        <p>📌 **Certifications**: Siemens Certified Automation Engineer, Six Sigma Green Belt, etc.</p>
-    </div>
+            <div class="introduction">
+                <p>Hello, I'm <strong>Maurice Elkouby</strong>, a passionate technologist in the field of engineering and automation. With a keen interest in improving manufacturing efficiency, my goal is to specialize in using cutting-edge 3D simulation tools to optimize workflows and reduce costs. My goal is to combine technical expertise with real-world applications to help companies grow through smarter automation solutions.</p>
+            </div>
 
-    <div id="projects" class="tab-content">
-        <h2>Projects</h2>
-        <p>🔹 **Smart Factory Simulation** – Optimized production efficiency using digital twins.</p>
-        <p>🔹 **Automated Assembly Line** – Designed PLC-based control systems for industrial robotics.</p>
-        <a href="portfolio.html" class="cta-button">See Full Portfolio</a>
-    </div>
+            <section class="early-life">
+                <h3>Early Life and Education</h3>
+                <p>I was born and raised in <em>Montreal</em>, where I developed an early fascination with technology with starting programming with scratch.mit.edu at the early age of 8, robotics competitions at 10 and arduino circuitry at 12.</p>
 
-    <div id="biography" class="tab-content">
-        <h2>Biography</h2>
-        <p>💼 Experienced in factory automation, industrial robotics, and digital manufacturing.</p>
-        <p>🏭 Worked with Siemens, Rockwell Automation, and ABB systems.</p>
-    </div>
+                <div class="project-gallery">
+                    <figure>
+                        <figcaption>Academic achievements: 4 medals won for AI soccer and AI pathfinding competitions (highschool + elementary)</figcaption>
+                        <img src="assets/medals.jpg" alt="I won 2 medals in elementary and 2 in highschool for Ai soccer and Ai pathfinding" width="250" height="200" />
+                    </figure>
+                </div>
 
-    <script src="js/script.js"></script>
-</body>
+                <p>I then continued on to Royal West where I took technology complementaries, participated in robotics club and in honor band.</p>
+
+                <div class="project-gallery">
+                    <figure>
+                        <figcaption>JS: 3D visualization of Royal West Academy using unit circle and perspective rendering</figcaption>
+                        <a href="https://replit.com/@mokoolb/Royal-west-school-2?v=1#index.html">
+                            <img src="assets/3D school.png" alt="A 3D rendering of my high school using unit circle and perspective" />
+                        </a>
+                    </figure>
+
+                    <figure>
+                        <figcaption>Pygame: Mage Rush: A Flappy Bird-style game</figcaption>
+                        <a href="https://replit.com/@mokoolb/Mage-Rush-1?v=1">
+                            <img src="assets/Mage Rush.png" alt="Mage flappy bird pygame" />
+                        </a>
+                    </figure>
+                </div>
+
+                <p>In cegep I went for a hands on approach to learning and dived into the 3 year Electrical Engineering technology: Automation and Control. During my studies, I participated in several hands-on projects that sparked my interest in factory automation and simulation technologies.</p>
+            </section>
+
+            <section class="Personal Interests">
+                <h3>Personal Interests</h3>
+                <p>I played piano to a 9th grade RCM level, which gave me a strong fundemental of sound design useful for making my own tracks and teaching.</p>
+                <p>I enjoy reading fantasy books, currently waiting on the 6th book of Game of Thrones.</p>
+                <p>I enjoy being outdoors, wether it's skating, hiking and epecially fishing</p>
+                <p>I make personal coding projects and participate in GameJams.</p>
+            </section>
+
+            <section class="vision">
+                <h3>Vision & Career Goals</h3>
+                <p>Looking forward, I aim to expand my expertise in integrating AI into manufacturing systems and leading large-scale automation projects. I am passionate about finding innovative solutions that push the boundaries of what's possible in factory automation and simulation, and I hope to contribute to projects that change the way industries operate.</p>
+            </section>
+
+        </section>
+    </main>
+
     <footer>
         <p>&copy; 2025 Maurice Elkouby | Automation Engineer</p>
     </footer>
+
+    <script src="js/script.js"></script>
+</body>
 </html>
