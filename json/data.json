@@ -1,0 +1,18 @@
+{
+  "projects": [
+    {
+      "name": "Factory Automation System",
+      "description": "A PLC-based automation solution for optimizing factory processes.",
+      "technologies": ["PLC", "SCADA", "Siemens TIA Portal"],
+      "url": "https://yourportfolio.com/factory-automation"
+    },
+    {
+      "name": "Music Player App",
+      "description": "A Flutter app with a vintage rock aesthetic for playing local MP3 files.",
+      "technologies": ["Flutter", "Dart", "Firebase Firestore"],
+      "url": "https://yourportfolio.com/music-player"
+    }
+  ],
+  "skills": ["Automation Engineering", "PLC Programming", "SCADA Systems", "Flutter App Development"],
+  "experience": "Automation Engineer with expertise in factory simulation, industrial automation, and control systems."
+}
