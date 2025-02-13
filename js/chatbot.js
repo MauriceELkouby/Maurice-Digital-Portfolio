@@ -40,12 +40,14 @@ window.onload = function () {
             chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
         }
     }
-
+    
     async function getAnswer(question) {
         try {
-            const response = await fetch("http://127.0.0.1:5000/ask", {
+            const response = await fetch("https://personal-website-backend-six.vercel.app/ask", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
+                headers: {
+                    "Content-Type": "application/json"
+                },
                 body: JSON.stringify({ question }),
             });
 
@@ -60,4 +62,5 @@ window.onload = function () {
             return "Sorry, I couldn't process that.";
         }
     }
+
 };
