@@ -1,23 +1,25 @@
-async function fetchData() {
-    const response = await fetch('data.json');
-    return response.json();
-}
-
 async function getResponse(userInput) {
-    const data = await fetchData();
-    userInput = userInput.toLowerCase();
+    try {
+        const response = await fetch('https://portfolio.mokoolb.workers.dev/', {
+            method: 'POST', // Ensure this is POST
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ userInput }) // Ensure this is a JSON object
+        });
 
-    if (userInput.includes("name")) return `My name is ${data.name}.`;
-    if (userInput.includes("skills")) return `My skills include: ${data.skills.join(", ")}.`;
-    if (userInput.includes("experience")) {
-        return `I have worked as ${data.experience[0].role} at ${data.experience[0].company} since ${data.experience[0].years}.`;
-    }
-    if (userInput.includes("projects")) {
-        return `Here are some of my projects:\n${data.projects.map(p => `- ${p.name}: ${p.description} (${p.link})`).join("\n")}`;
-    }
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
 
-    return "I'm not sure how to answer that. Try asking about my skills, projects, or experience!";
+        const data = await response.json();
+        return data.answer;
+    } catch (error) {
+        console.error("Error fetching response:", error);
+        return "Error processing your request.";
+    }
 }
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const chatInput = document.getElementById("chat-input");
