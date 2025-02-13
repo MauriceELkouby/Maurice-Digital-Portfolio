@@ -1,18 +1,34 @@
 {
-  "projects": [
-    {
-      "name": "Factory Automation System",
-      "description": "A PLC-based automation solution for optimizing factory processes.",
-      "technologies": ["PLC", "SCADA", "Siemens TIA Portal"],
-      "url": "https://yourportfolio.com/factory-automation"
-    },
-    {
-      "name": "Music Player App",
-      "description": "A Flutter app with a vintage rock aesthetic for playing local MP3 files.",
-      "technologies": ["Flutter", "Dart", "Firebase Firestore"],
-      "url": "https://yourportfolio.com/music-player"
-    }
-  ],
-  "skills": ["Automation Engineering", "PLC Programming", "SCADA Systems", "Flutter App Development"],
-  "experience": "Automation Engineer with expertise in factory simulation, industrial automation, and control systems."
+    "name": "Maurice Elkouby",
+    "title": "Automation Engineer",
+    "bio": "I specialize in factory simulation, automation, and professional portfolio development.",
+    "skills": [
+        "Factory Automation",
+        "Simulation Software",
+        "PLC Programming",
+        "Robotics",
+        "Flutter Development"
+    ],
+    "projects": [
+        {
+            "name": "Factory Simulation Model",
+            "description": "Developed a high-precision simulation for factory automation.",
+            "technologies": [ "Python", "Simulation Software", "Automation" ],
+            "link": "https://github.com/yourusername/factory-simulation"
+        },
+        {
+            "name": "Music Player App",
+            "description": "A Flutter music player app with Firebase integration and a vintage rock UI.",
+            "technologies": [ "Flutter", "Firebase", "Dart" ],
+            "link": "https://github.com/yourusername/music-player"
+        }
+    ],
+    "experience": [
+        {
+            "role": "Automation Engineer",
+            "company": "TechCorp",
+            "years": "2019 - Present",
+            "description": "Developed automation solutions for industrial processes."
+        }
+    ]
 }
