@@ -21,33 +21,38 @@
             </div>
         </nav>
     </header>
-
+    <section id="filter-buttons">
+        <button class="filter-button" data-type="all">All</button>
+        <button class="filter-button" data-type="sim">Simulation</button>
+        <button class="filter-button" data-type="design">Design</button>
+        <button class="filter-button" data-type="intern">Internship</button>
+    </section>
     <section id="projects">
-        <div class="project-card">
+        <div class="project-card" data-type="sim">
             <img src="assets/CNCSIM.png" alt="Factory Simulation">
             <h3>Simulation of CNC</h3>
             <p>School project for Industrial Robotics in which I simulated a CNC machine, set up a SCADA interface and used a "GEMMA" structured program</p>
             <a href="https://drive.google.com/drive/folders/1j3cjQ0wuver4hpxdf4141pdunpleOFLo?usp=drive_link">See folder...</a>
         </div>
-        <div class="project-card">
+        <div class="project-card" data-type="sim">
             <img src="assets/OEE.png" alt="Factory Simulation">
             <h3>KPIs of a Simulated Factory</h3>
             <p>School project for Business Intelligence in which I simulated factory values, designed an; SQL Database, SCADA interface and PowerBI interface</p>
             <a href="https://drive.google.com/drive/folders/18W7IKEGYlg3_qyTdXXty4qbr49wCpoPI?usp=sharing">See folder...</a>
         </div>
-        <div class="project-card">
+        <div class="project-card" data-type="design">
             <img src="assets/SafetySystemDesign.png" alt="Factory Simulation">
             <h3>Safety System Design</h3>
             <p>School project for safety systems in which we had set up instrumentation for a tank system</p>
             <a href="https://drive.google.com/drive/folders/1_nHdBI72dwIhnLTJevDIornkEJhiGtZ3?usp=sharing">See folder...</a>
         </div>
-        <div class="project-card">
+        <div class="project-card" data-type="sim">
             <img src="assets/Tank.png" alt="Factory Simulation">
             <h3>Simulation of Cascade controlled tank</h3>
             <p>School project for process control class using an S7-1200, HMI and Factory IO</p>
             <a href="https://drive.google.com/file/d/1h4UvBQ5GN3PANB_AhcCqC4_k97kg6PlY/view?usp=sharing">See pdf...</a>
         </div>
-        <div class="project-card">
+        <div class="project-card" data-type="intern"> 
             <img src="assets/ChargeBack.png" alt="Factory Simulation">
             <h3>Chargeback Automation</h3>
             <p>Interned at CGI as an Automation Analyst. Worked with various SQL databases, python, JS, and the software's custom scripting language</p>
@@ -71,6 +76,7 @@
             </div>
         </div>
     </div>
+    <script src="js/filterbutton.js"></script>
     <script src="js/chatbot.js"></script>
     <script src="js/script.js"></script>
 </body>

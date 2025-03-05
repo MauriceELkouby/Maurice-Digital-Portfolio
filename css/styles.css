@@ -395,3 +395,23 @@ iframe {
     color: #D9B68C;
     cursor: pointer;
 }
+/*filter button style*/
+#filter-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filter-button {
+    background-color: #1e1e1e;
+    color: #D9B68C;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .filter-button:hover {
+        background-color: #7C4D3A;
+    }
