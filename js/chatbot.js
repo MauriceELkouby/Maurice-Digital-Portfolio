@@ -35,7 +35,16 @@ window.onload = function () {
             chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
             userInput.value = "";
 
+            // Show loading message
+            const loadingMessage = document.createElement("div");
+            loadingMessage.className = "message bot-message loading";
+            loadingMessage.innerText = "Loading...";
+            chatbotMessages.appendChild(loadingMessage);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
             const answer = await getAnswer(userMessage);
+
+            // Remove loading message
+            chatbotMessages.removeChild(loadingMessage);
             chatbotMessages.innerHTML += `<div class="message bot-message">${answer}</div>`;
             chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
         }
