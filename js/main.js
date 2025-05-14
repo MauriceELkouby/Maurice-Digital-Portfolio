@@ -74,22 +74,52 @@ fetch('json/data.json')
 // Filter Buttons Logic
 function setupFilterButtons() {
     const filterButtons = document.querySelectorAll('.filter-buttons button');
-    const projectCards = document.querySelectorAll('.project-card');
-
+    const projectGrid = document.querySelector('.projects-grid');
+    
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             const type = button.getAttribute('data-type');
-
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-
-            projectCards.forEach(card => {
-                if (type === 'all' || card.getAttribute('data-type') === type) {
-                    card.style.display = 'block';
+            const cards = Array.from(document.querySelectorAll('.project-card'));
+    
+            // Step 1: Capture first positions
+            const firstRects = new Map();
+            cards.forEach(card => {
+                firstRects.set(card, card.getBoundingClientRect());
+            });
+    
+            // Step 2: Update visibility classes
+            cards.forEach(card => {
+                const cardType = card.getAttribute('data-type');
+                if (type === 'all' || cardType === type) {
+                    card.classList.remove('hidden');
                 } else {
-                    card.style.display = 'none';
+                    card.classList.add('hidden');
+                }
+            });
+    
+            // Step 3: Force reflow (sync layout)
+            projectGrid.offsetHeight;
+    
+            // Step 4: Capture last positions & apply invert transform
+            cards.forEach(card => {
+                const firstRect = firstRects.get(card);
+                const lastRect = card.getBoundingClientRect();
+    
+                const dx = firstRect.left - lastRect.left;
+                const dy = firstRect.top - lastRect.top;
+    
+                if (dx !== 0 || dy !== 0) {
+                    card.style.transform = `translate(${dx}px, ${dy}px)`;
+                    card.style.transition = 'none';
+                    
+                    // Trigger next frame for smooth animation back
+                    requestAnimationFrame(() => {
+                        card.style.transition = 'transform 0.4s ease, opacity 0.3s ease';
+                        card.style.transform = '';
+                    });
                 }
             });
         });
     });
+     
 }
