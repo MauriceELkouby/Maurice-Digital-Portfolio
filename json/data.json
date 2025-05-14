@@ -28,9 +28,9 @@
         {
             "name": "RaspberryPi+LOGO Control Panel",
             "description": "A design project integrating RaspberryPi with Siemens LOGO for hybrid control systems.",
-            "technologies": ["Python", "Wiring", "MQTT", "Ignition"],
+            "technologies": [ "Python", "Wiring", "MQTT", "Ignition" ],
             "type": "design",
-            "link": "#",
+            "link": "https://drive.google.com/file/d/1t-JvX7Iy_71O4xProFHQzbK-AC0fUmC9/view?usp=sharing",
             "image": "assets/panel.jpg"
         },
         {
