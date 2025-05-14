@@ -7,28 +7,134 @@
         "Simulation Software",
         "PLC Programming",
         "Robotics",
-        "Flutter Development"
+        "Flutter Development",
+        "Python",
+        "C#",
+        "C++",
+        "Unity",
+        "OPC UA",
+        "SCADA"
     ],
     "projects": [
         {
-            "name": "Factory Simulation Model",
-            "description": "Developed a high-precision simulation for factory automation.",
-            "technologies": [ "Python", "Simulation Software", "Automation" ],
-            "link": "https://github.com/yourusername/factory-simulation"
+            "name": "Simulation of Automotive Assembly",
+            "description": "A factory simulation project for automotive assembly using Unity, PLCs, and GEMMA.",
+            "technologies": ["Unity", "C#", "C++", "PLC", "GEMMA", "OPC UA", "Ignition", "MYSQL"],
+            "type": "sim",
+            "link": "https://github.com/MauriceELkouby/AutomotiveFactorySim",
+            "image": "assets/car.png"
         },
         {
-            "name": "Music Player App",
-            "description": "A Flutter music player app with Firebase integration and a vintage rock UI.",
-            "technologies": [ "Flutter", "Firebase", "Dart" ],
-            "link": "https://github.com/yourusername/music-player"
-        }
-    ],
-    "experience": [
+            "name": "RaspberryPi+LOGO Control Panel",
+            "description": "A design project integrating RaspberryPi with Siemens LOGO for hybrid control systems.",
+            "technologies": ["Python", "Wiring", "MQTT", "Ignition"],
+            "type": "design",
+            "link": "#",
+            "image": "assets/panel.jpg"
+        },
         {
-            "role": "Automation Engineer",
-            "company": "TechCorp",
-            "years": "2019 - Present",
-            "description": "Developed automation solutions for industrial processes."
-        }
+            "name": "Power Grid Design",
+            "description": "Design and simulation of AC power grid with generators and Matlab analysis.",
+            "technologies": ["Ac power", "Generator", "Matlab"],
+            "type": "design",
+            "link": "#",
+            "image": "assets/Grid.png"
+        },
+        {
+            "name": "Simulation of CNC",
+            "description": "CNC machine simulation using PLC, OPC UA, and FactoryIO with GEMMA methodology.",
+            "technologies": ["PLC", "GEMMA", "OPC UA", "Ignition", "MYSQL", "FactoryIO"],
+            "type": "sim",
+            "link": "https://drive.google.com/drive/folders/1j3cjQ0wuver4hpxdf4141pdunpleOFLo?usp=drive_link",
+            "image": "assets/CNCSIM.png"
+        },
+        {
+            "name": "Safety System Design",
+            "description": "Engineering design project focusing on safety systems, P&ID diagrams, and loop diagrams.",
+            "technologies": ["AutoCad", "P&ID", "Loop Diagram"],
+            "type": "design",
+            "link": "https://drive.google.com/drive/folders/1_nHdBI72dwIhnLTJevDIornkEJhiGtZ3?usp=sharing",
+            "image": "assets/SafetySystemDesign.png"
+        },
+        {
+            "name": "Simulation of Cascade Controlled P&ID",
+            "description": "Simulation project of a cascade-controlled tank using FactoryIO and PID control.",
+            "technologies": ["PLC", "PID", "HMI", "FactoryIO"],
+            "type": "sim",
+            "link": "https://drive.google.com/file/d/1h4UvBQ5GN3PANB_AhcCqC4_k97kg6PlY/view?usp=sharing",
+            "image": "assets/Tank.png"
+        },
+        {
+            "name": "Intern: Chargeback Automation",
+            "description": "Internship project focused on automating chargeback processes using SQL and Excel.",
+            "technologies": ["Javascript", "Excel Formulas", "PostgreSQL", "Microsoft SQL"],
+            "type": "intern",
+            "link": "https://www.cgi.com/en",
+            "image": "assets/ChargeBack.png"
+        },
+        {
+            "name": "GameJam: Prof 101",
+            "description": "GameJam project developed with Unity.",
+            "technologies": ["C#", "Unity", "3D"],
+            "type": "games",
+            "link": "https://mokoolb.itch.io/prof-101",
+            "image": "assets/prof101.png"
+        },    
+        {
+            "name": "Excel Chess Application",
+            "description": "A VBA-powered chess game built in Excel.",
+            "technologies": ["VBA script", "Excel"],
+            "type": "software",
+            "link": "https://1drv.ms/f/s!AnUaqIm8A7JzhNhFt6d4c2oeOBvu3Q?e=xGlqJr",
+            "image": "assets/Chess.png"
+        },
+        {
+            "name": "GameJam: Hero's Merchant",
+            "description": "Merchant simulation game made for a GameJam.",
+            "technologies": ["C#", "Unity", "3D"],
+            "type": "games",
+            "link": "https://mokoolb.itch.io/herosmerchant",
+            "image": "assets/HerosMerchant.png"
+        },
+        {
+            "name": "Portfolio Website",
+            "description": "Digital portfolio website showcasing my projects.",
+            "technologies": ["Javascript", "Python", "Github", "Vercel"],
+            "type": "software",
+            "link": "https://github.com/MauriceELkouby/Maurice-Digital-Portfolio",
+            "image": "assets/Portfolio Home.png"
+        },
+        {
+            "name": "Music Sharing App",
+            "description": "A mobile app for sharing music using Firebase.",
+            "technologies": ["C", "Android Studio", "FireBase", "Github"],
+            "type": "software",
+            "link": "https://github.com/MauriceELkouby/fm_radio",
+            "image": "assets/MusicApp.png"
+        },
+        {
+            "name": "GameJam: Chasmed",
+            "description": "Procedural world-gen game made in Unity.",
+            "technologies": ["C#", "Unity", "Ai", "World Gen", "2D"],
+            "type": "games",
+            "link": "https://mokoolb.itch.io/chasm-ed",
+            "image": "assets/Chasmed.png"
+        },
+        {
+            "name": "GameJam: Woke",
+            "description": "2D platformer game developed during a GameJam.",
+            "technologies": ["C#", "Unity", "2D"],
+            "type": "games",
+            "link": "https://mokoolb.itch.io/woke",
+            "image": "assets/Woke.png"
+        },
+        {
+            "name": "BoggleSolver",
+            "description": "A DFS-based Python application to solve Boggle puzzles.",
+            "technologies": ["Python", "DFS"],
+            "type": "software",
+            "link": "https://github.com/MauriceELkouby/PythonBoggleSolver",
+            "image": "assets/BoggleSolver.png"
+        }            
     ]
 }
