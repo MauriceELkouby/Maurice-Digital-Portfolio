@@ -225,9 +225,10 @@ body {
 /* Filter Buttons */
 .filter-buttons {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
-    margin-top: 1rem;
+    padding: 0 1rem;
 }
 
 .filter-buttons button {
