@@ -92,7 +92,7 @@
         {
             "name": "Excel Chess Application",
             "description": "A VBA-powered chess game built in Excel.",
-            "technologies": [ "VBA script", "Excel" ],
+            "technologies": [ "VBA script", "Macros" ],
             "type": "software",
             "link": "https://1drv.ms/f/s!AnUaqIm8A7JzhNhFt6d4c2oeOBvu3Q?e=xGlqJr",
             "image": "assets/Chess.png"
