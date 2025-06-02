@@ -17,7 +17,6 @@
         "SCADA"
     ],
         "projects": [
-            //Simulation
             {
                 "name": "Simulation of Automotive Assembly",
                 "description": "A factory simulation project for automotive assembly using Unity, PLCs, and GEMMA.",
@@ -42,7 +41,6 @@
                 "link": "https://drive.google.com/file/d/1h4UvBQ5GN3PANB_AhcCqC4_k97kg6PlY/view?usp=sharing",
                 "image": "assets/Tank.png"
             },
-            //Design
             {
                 "name": "RaspberryPi+LOGO Control Panel",
                 "description": "A design project integrating RaspberryPi with Siemens LOGO for hybrid control systems.",
@@ -67,7 +65,6 @@
                 "link": "https://drive.google.com/drive/folders/1_nHdBI72dwIhnLTJevDIornkEJhiGtZ3?usp=sharing",
                 "image": "assets/SafetySystemDesign.png"
             },
-            //Intern
             {
                 "name": "Coop: Developer",
                 "description": "",
@@ -84,7 +81,6 @@
                 "link": "https://www.cgi.com/en",
                 "image": "assets/ChargeBack.png"
             },
-            //Software
             {
                 "name": "Custom Cloud Server",
                 "description": "Cloud server hosted locally with a raspberri pi, accessible anywhere with an custom application",
@@ -125,7 +121,6 @@
                 "link": "https://github.com/MauriceELkouby/PythonBoggleSolver",
                 "image": "assets/BoggleSolver.png"
             },
-            //Games
             {
                 "name": "GameJam: Hero's Merchant",
                 "description": "Merchant simulation game made for a GameJam.",
