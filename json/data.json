@@ -68,7 +68,7 @@
             {
                 "name": "Coop: Developer",
                 "description": "",
-                "technologies": [ "" ],
+                "technologies": [ "API development", "VB script", "Testing Automation", "C#" ],
                 "type": "intern",
                 "link": "https://www.cgi.com/en",
                 "image": "assets/ChargeBack.png"
@@ -80,6 +80,14 @@
                 "type": "intern",
                 "link": "https://www.cgi.com/en",
                 "image": "assets/ChargeBack.png"
+            },
+            {
+                "name": "Fullstack Banking application",
+                "description": "Back-end database with unique accounts, website and Minecraft plugin front-end",
+                "technologies": [ "Java", "API development", "python", "Vercel", "Javascript" ],
+                "type": "software",
+                "link": "",
+                "image": "assets/cloud.jpg"
             },
             {
                 "name": "Custom Cloud Server",
