@@ -84,7 +84,7 @@
             {
                 "name": "Fullstack Banking application",
                 "description": "Back-end database with unique accounts, website and Minecraft plugin front-end",
-                "technologies": [ "Java", "API development", "python", "Vercel", "Javascript" ],
+                "technologies": [ "Java", "API development", "python", "Vercel", "Javascript", "PostgreSQL" ],
                 "type": "software",
                 "link": "",
                 "image": "assets/bank.jpg"
