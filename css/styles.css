@@ -276,8 +276,74 @@ body {
     color: #8AFF80;
     text-decoration: underline;
 }
+/* Nudge bubble */
+#chat-nudge {
+  position: fixed;
+  bottom: 80px;           /* sits above the chat button */
+  right: 20px;
+  max-width: 220px;
+  background: #FF6F3C;
+  color: #0F0F0F;
+  padding: 10px 12px;
+  border-radius: 14px;
+  font-size: 14px;
+  line-height: 1.2;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+  display: none;          /* JS toggles this */
+  z-index: 1001;
+  animation: nudge-in 350ms ease-out;
+}
 
 /* Chatbot */
+#chat-nudge::after {       /* little speech-arrow */
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  right: 24px;
+  border-width: 8px 8px 0 8px;
+  border-style: solid;
+  border-color: #FF6F3C transparent transparent transparent;
+}
+
+/* Show class so JS can toggle visibility without inline styles */
+#chat-nudge.show { display: block; }
+
+/* Entrance animation */
+@keyframes nudge-in {
+  from { transform: translateY(8px); opacity: 0; }
+  to   { transform: translateY(0);   opacity: 1; }
+}
+
+/* Subtle pulse ring behind the chat button to draw attention */
+#chat-toggle {
+  position: relative;
+  isolation: isolate; /* keeps the pulse behind the button */
+}
+
+#chat-toggle::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50px;
+  z-index: -1;
+  box-shadow: 0 0 0 0 rgba(255, 111, 60, 0.55);
+  animation: pulse 2.2s ease-out infinite;
+}
+
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(255, 111, 60, 0.55); }
+  70%  { box-shadow: 0 0 0 14px rgba(255, 111, 60, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 111, 60, 0); }
+}
+
+/* Don’t let the nudge overlap the open chat window */
+#chatbot { z-index: 1002; }
+
+/* Mobile: tuck the bubble a bit higher */
+@media (max-width: 520px) {
+  #chat-nudge { bottom: 100px; right: 16px; max-width: 70vw; }
+}
+
 #chatbot-container {
     position: fixed;
     bottom: 20px;

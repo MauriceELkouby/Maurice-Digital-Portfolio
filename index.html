@@ -125,19 +125,27 @@
 
     <!-- Chatbot Widget -->
     <div id="chatbot-container">
-        <button id="chat-toggle">💬 Chat</button>
-        <div id="chatbot">
-            <div id="chat-header">
-                MauriceBot
-                <button id="close-chat">✖</button>
-            </div>
-            <div id="chat-output"></div>
-            <div id="chat-input-container">
-                <input type="text" id="chat-input" placeholder="Ask me something...">
-                <button id="send-button">Send</button>
-            </div>
+    <button id="chat-toggle" aria-controls="chatbot" aria-expanded="false">💬 Chat</button>
+
+    <!-- 👇 Add this -->
+    <div id="chat-nudge" role="status" aria-live="polite">
+        Got a question? Click chat!
+    </div>
+    <!-- 👆 Add this -->
+
+    <div id="chatbot" role="dialog" aria-label="MauriceBot">
+        <div id="chat-header">
+        MauriceBot
+        <button id="close-chat" aria-label="Close chat">✖</button>
+        </div>
+        <div id="chat-output"></div>
+        <div id="chat-input-container">
+        <input type="text" id="chat-input" placeholder="Ask me something..." aria-label="Chat input">
+        <button id="send-button" aria-label="Send message">Send</button>
         </div>
     </div>
+    </div>
+    
 
     <button id="back-to-top">↑</button>
 
