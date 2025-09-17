@@ -62,11 +62,10 @@ fetch('json/data.json')
             card.innerHTML = `
                 <img src="${project.image || 'assets/default.png'}" alt="${project.name}">
                 <h3>${project.name}</h3>
-                <p>${project.description}</p>
+                <p class="project-summary">${project.description}</p>
                 <p>${skillsHTML}</p>
-                <a href="${project.link}" target="_blank">View Project</a>
+                <a href="${project.link}" target="_blank">View PDF report summary</a>
             `;
-
             projectsGrid.appendChild(card);
         });
 

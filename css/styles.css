@@ -524,3 +524,8 @@ body {
     border-radius: 10px;
     margin-top: 1rem;
 }
+.project-summary {
+  margin: 0 1rem 0.75rem 1rem;
+  color: #EDEDED;
+  line-height: 1.45;
+}
