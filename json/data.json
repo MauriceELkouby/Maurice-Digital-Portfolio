@@ -22,7 +22,7 @@
                 "description": "A factory simulation project for automotive assembly using Unity, PLCs, and GEMMA.",
                 "technologies": [ "Unity", "C#", "C++", "PLC", "GEMMA", "OPC UA", "Ignition", "MYSQL" ],
                 "type": "sim",
-                "link": "https://github.com/MauriceELkouby/AutomotiveFactorySim",
+                "link": "https://drive.google.com/drive/folders/1Y8s6SkZO-fFFpIx0wsETMNV8dad3PsW0?usp=sharing",
                 "image": "assets/car.png"
             },
             {
@@ -30,15 +30,15 @@
                 "description": "CNC machine simulation using PLC, OPC UA, and FactoryIO with GEMMA methodology.",
                 "technologies": [ "PLC", "GEMMA", "OPC UA", "Ignition", "MYSQL", "FactoryIO" ],
                 "type": "sim",
-                "link": "https://drive.google.com/drive/folders/1j3cjQ0wuver4hpxdf4141pdunpleOFLo?usp=drive_link",
+                "link": "https://drive.google.com/drive/folders/1mQm079HEIClcmgj07xEhXJ1l_QnODDye?usp=sharing",
                 "image": "assets/CNCSIM.png"
             },
             {
-                "name": "Simulation of Cascade Controlled P&ID",
+                "name": "Simulation of Cascade Controlled PID",
                 "description": "Simulation project of a cascade-controlled tank using FactoryIO and PID control.",
                 "technologies": [ "PLC", "PID", "HMI", "FactoryIO" ],
                 "type": "sim",
-                "link": "https://drive.google.com/file/d/1h4UvBQ5GN3PANB_AhcCqC4_k97kg6PlY/view?usp=sharing",
+                "link": "https://drive.google.com/drive/folders/1KEBzkox9bhez3gLPUu4nL7aHgjm00nmf?usp=sharing",
                 "image": "assets/Tank.png"
             },
             {
@@ -46,7 +46,7 @@
                 "description": "A design project integrating RaspberryPi with Siemens LOGO for hybrid control systems.",
                 "technologies": [ "Python", "Wiring", "MQTT", "Ignition" ],
                 "type": "design",
-                "link": "https://drive.google.com/file/d/1t-JvX7Iy_71O4xProFHQzbK-AC0fUmC9/view?usp=sharing",
+                "link": "https://drive.google.com/drive/folders/16ob-_zK2tY3BsASLBeJTgN7N5cdVIUC1?usp=sharing",
                 "image": "assets/panel.jpg"
             },
             {
@@ -54,7 +54,7 @@
                 "description": "Design and simulation of AC power grid with generators and Matlab analysis.",
                 "technologies": [ "Ac power", "Generator", "Matlab" ],
                 "type": "design",
-                "link": "#",
+                "link": "https://drive.google.com/drive/folders/1XhZBYbYiZ_7UDiuNRuMgSlsplEkjL_Tc?usp=sharing",
                 "image": "assets/Grid.png"
             },
             {
@@ -62,7 +62,7 @@
                 "description": "Engineering design project focusing on safety systems, P&ID diagrams, and loop diagrams.",
                 "technologies": [ "AutoCad", "P&ID", "Loop Diagram" ],
                 "type": "design",
-                "link": "https://drive.google.com/drive/folders/1_nHdBI72dwIhnLTJevDIornkEJhiGtZ3?usp=sharing",
+                "link": "https://drive.google.com/drive/folders/1fbgr3ORwRIwthdDfo_lYDUvr-2aGOY0c?usp=sharing",
                 "image": "assets/SafetySystemDesign.png"
             },
             {
@@ -86,7 +86,7 @@
                 "description": "Back-end database with unique accounts, website and Minecraft plugin front-end",
                 "technologies": [ "Java", "API development", "python", "Vercel", "Javascript", "PostgreSQL" ],
                 "type": "software",
-                "link": "",
+                "link": "https://drive.google.com/drive/folders/1X0K7CHx_LLbA3blVyGif59fuE0UzvBDy?usp=sharing",
                 "image": "assets/bank.jpg"
             },
             {
@@ -94,7 +94,7 @@
                 "description": "Cloud server hosted locally with a raspberri pi, accessible anywhere with an custom application",
                 "technologies": [ "C", "API development", "python", "Android Studio" ],
                 "type": "software",
-                "link": "",
+                "link": "https://drive.google.com/drive/folders/1maqHqKfwkAA1HiYp88NJlO-mPoOxFQGZ?usp=sharing",
                 "image": "assets/cloud.jpg"
             },
             {
