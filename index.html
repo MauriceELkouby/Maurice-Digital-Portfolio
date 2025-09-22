@@ -159,6 +159,28 @@
     <script src="js/main.js"></script>
     <script src="js/translate.js"></script>
     <script>AOS.init();</script>
+    <script>
+  function killGTranslateBanner() {
+    const banner = document.querySelector('iframe.goog-te-banner-frame');
+    if (banner) banner.style.display = 'none';
+    const html = document.documentElement;
+    const body = document.body;
+    if (html && getComputedStyle(html).top !== '0px') html.style.top = '0px';
+    if (body && getComputedStyle(body).top !== '0px') body.style.top = '0px';
+  }
+
+  killGTranslateBanner();
+  const mo = new MutationObserver(killGTranslateBanner);
+  mo.observe(document.documentElement, { childList: true, subtree: true });
+
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('[data-lang]')) {
+      setTimeout(killGTranslateBanner, 300);
+      setTimeout(killGTranslateBanner, 1200);
+    }
+  });
+</script>
+
     
 
 

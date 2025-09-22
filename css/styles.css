@@ -550,24 +550,27 @@ body {
   transform: translateY(-2px); /* subtle lift */
 }
 
-/* put in your CSS */
-.goog-te-banner-frame { display: none !important; }
-body { top: 0 !important; }
-.goog-logo-link, .goog-te-gadget span { display: none !important; }
-.goog-te-gadget { height: 0; overflow: hidden; }
-/* Kill Google Translate top bar completely */
-.goog-te-banner-frame {
+/* Kill the top banner entirely */
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate {
   display: none !important;
   visibility: hidden !important;
   height: 0 !important;
 }
 
-html {
+/* Remove any push-down Google applies */
+html, body {
+  top: 0 !important;
   margin-top: 0 !important;
   padding-top: 0 !important;
-  top: 0 !important;
 }
+
+/* Optional: hide leftover tooltip/balloon & gadget bits */
 #goog-gt-tt,
-.goog-te-balloon-frame {
+.goog-te-balloon-frame,
+.goog-te-gadget-icon,
+.goog-logo-link,
+.goog-te-gadget span {
   display: none !important;
 }
+.goog-te-gadget { height: 0 !important; overflow: hidden !important; }
