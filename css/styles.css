@@ -555,3 +555,19 @@ body {
 body { top: 0 !important; }
 .goog-logo-link, .goog-te-gadget span { display: none !important; }
 .goog-te-gadget { height: 0; overflow: hidden; }
+/* Kill Google Translate top bar completely */
+.goog-te-banner-frame {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+}
+
+html {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  top: 0 !important;
+}
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+}
