@@ -64,7 +64,7 @@ fetch('json/data.json')
                 <h3>${project.name}</h3>
                 <p class="project-summary">${project.description}</p>
                 <p>${skillsHTML}</p>
-                <a href="${project.link}" target="_blank">View PDF report summary</a>
+                <a href="${project.link}" target="_blank">View more...</a>
             `;
             projectsGrid.appendChild(card);
         });
