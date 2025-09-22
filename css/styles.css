@@ -529,3 +529,29 @@ body {
   color: #EDEDED;
   line-height: 1.45;
 }
+.lang-switch {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: 1rem;
+}
+
+.lang-switch button {
+  background: transparent;      /* no background */
+  color: #D9B68C;              /* same as nav text */
+  border: none;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.lang-switch button:hover {
+  color: #C65D3B;              /* highlight on hover */
+  transform: translateY(-2px); /* subtle lift */
+}
+
+/* put in your CSS */
+.goog-te-banner-frame { display: none !important; }
+body { top: 0 !important; }
+.goog-logo-link, .goog-te-gadget span { display: none !important; }
+.goog-te-gadget { height: 0; overflow: hidden; }
