@@ -12,9 +12,6 @@
                     card.style.display = 'none';
                 }
             });
-            gtag('event', 'filter_selected', {
-            'filter_type': type
-            });
             
         });
     });

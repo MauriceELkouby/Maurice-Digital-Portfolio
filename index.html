@@ -69,11 +69,11 @@
         <h2 data-aos="fade-up">Projects</h2>
         <div class="filter-buttons" data-aos="fade-up" data-aos-delay="100">
             <button data-type="all">All</button>
-            <button data-type="sim" >Simulation</button>
-            <button data-type="design">Design</button>
-            <button data-type="intern">Intern</button>
-            <button data-type="software">Software</button>
-            <button data-type="games">GameDev</button>
+            <button data-type="sim" onclick="gtag('event', 'simulation_selected', { 'label': 'Simulation Filter' })">Simulation</button>
+            <button data-type="design" onclick="gtag('event', 'design_selected', { 'label': 'Design Filter' })">Design</button>
+            <button data-type="intern" onclick="gtag('event', 'intern_selected', { 'label': 'Intern Filter' })">Intern</button>
+            <button data-type="software" onclick="gtag('event', 'software_selected', { 'label': 'Software Filter' })">Software</button>
+            <button data-type="games" onclick="gtag('event', 'gamedev_selected', { 'label': 'GameDev Filter' })">GameDev</button>
         </div>
         <div class="projects-grid" id="project-cards">
         </div>
