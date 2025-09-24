@@ -69,7 +69,7 @@
         <h2 data-aos="fade-up">Projects</h2>
         <div class="filter-buttons" data-aos="fade-up" data-aos-delay="100">
             <button data-type="all">All</button>
-            <button data-type="sim">Simulation</button>
+            <button data-type="sim" >Simulation</button>
             <button data-type="design">Design</button>
             <button data-type="intern">Intern</button>
             <button data-type="software">Software</button>
@@ -138,7 +138,7 @@
 
     <!-- Chatbot Widget -->
     <div id="chatbot-container">
-    <button id="chat-toggle" aria-controls="chatbot" aria-expanded="false">💬 Chat</button>
+    <button id="chat-toggle" aria-controls="chatbot" aria-expanded="false" onclick="gtag('event', 'chatbot_opened', { 'label': 'Chat Toggle' });">💬 Chat</button>
 
     <!-- 👇 Add this -->
     <div id="chat-nudge" role="status" aria-live="polite">
@@ -168,32 +168,5 @@
     <script src="js/main.js"></script>
     <script src="js/translate.js"></script>
     <script>AOS.init();</script>
-    <script>
-  function killGTranslateBanner() {
-    const banner = document.querySelector('iframe.goog-te-banner-frame');
-    if (banner) banner.style.display = 'none';
-    const html = document.documentElement;
-    const body = document.body;
-    if (html && getComputedStyle(html).top !== '0px') html.style.top = '0px';
-    if (body && getComputedStyle(body).top !== '0px') body.style.top = '0px';
-  }
-
-  killGTranslateBanner();
-  const mo = new MutationObserver(killGTranslateBanner);
-  mo.observe(document.documentElement, { childList: true, subtree: true });
-
-  document.addEventListener('click', (e) => {
-    if (e.target.closest('[data-lang]')) {
-      setTimeout(killGTranslateBanner, 300);
-      setTimeout(killGTranslateBanner, 1200);
-    }
-  });
-</script>
-
-    
-
-
-
-
 </body>
 </html>
