@@ -6,6 +6,8 @@
     <title>Maurice Elkouby | Automation Portfolio</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="preload" as="video" href="assets/montage.mp4" type="video/mp4">
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7C3JTG7CV"></script>
@@ -16,6 +18,10 @@
 
   gtag('config', 'G-Q7C3JTG7CV');
 </script>
+<!-- Move this to just above </body> and defer -->
+<script defer src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>window.addEventListener('DOMContentLoaded',()=>AOS.init({ once:true, duration:600, offset:120 }));</script>
+
 <body>
     <!-- Navigation -->
     <nav id="navbar" class="glass sticky">
@@ -37,9 +43,8 @@
     <div id="google_translate_container" style="display:none"></div>
     <!-- Hero Section -->
     <section id="hero" class="hero-section">
-        <video autoplay muted loop playsinline class="hero-video">
+        <video autoplay muted loop playsinline class="hero-video" poster="assets/montage-poster.jpg" preload="auto">
             <source src="assets/montage.mp4" type="video/mp4">
-            Your browser does not support the video tag.
         </video>
         <h1 data-aos="fade-up">Maurice Elkouby</h1>
         <p data-aos="fade-up" data-aos-delay="200">Automation engineering student</p>
@@ -86,43 +91,43 @@
             <div class="cert-card">
                 <h3>CAPM</h3>
                 <p>Certified associate in project management</p>
-                <img src="assets/capm.jpg" alt="Competition Medals">
+                <img src="assets/capm.jpg" loading="lazy" decoding="async">
             </div>
             <div class="cert-card">
                 <h3>Inductive University Credential</h3>
                 <p>A software for making SCADA interfaces for mobile and desktop built with Jython</p>
-                <img src="assets/Ignition.jpg" alt="Competition Medals">
+                <img src="assets/Ignition.jpg" loading="lazy" decoding="async">
             </div>
             <div class="cert-card">
                 <h3>Associate Safety Professional</h3>
                 <p>ASP Construction Safety and Industrial Safety</p>
-                <img src="assets/ASP.png" alt="Competition Medals">
+                <img src="assets/ASP.png" loading="lazy" decoding="async">
             </div>
             <div class="cert-card">
                 <h3>Agile for Software Development</h3>
                 <p>Skillsoft course on fundementals of agile and agile methadologies in software development</p>
-                <img src="assets/agile.png" alt="Competition Medals">
+                <img src="assets/agile.png" loading="lazy" decoding="async">
             </div>
             <div class="cert-card">
                 <h3>Corporate Compliance</h3>
                 <p>Completed compliance courses involving AI, Data safety and ethical business in a corporate world</p>
-                <img src="assets/compliance.jpg" alt="Competition Medals">
+                <img src="assets/compliance.jpg" loading="lazy" decoding="async">
                 <a href="https://drive.google.com/drive/folders/1vuPrvgCgZlW6ElgRgU0NXTSfw_1FEg_P?usp=sharing" target="_blank">See Certificates</a>
             </div>
             <div class="cert-card">
                 <h3>Canadian Computing Competition (CCC)</h3>
                 <p>Top 25% in the CCC, showcasing algorithm problem-solving in C++.</p>
-                <img src="assets/CCC.png" alt="Competition Medals">
+                <img src="assets/CCC.png" loading="lazy" decoding="async">
             </div>
             <div class="cert-card">
                 <h3>Royal conservatory Level 9</h3>
                 <p>The Royal Conservatory is one of the largest and most respected music education institutions in the world.</p>
-                <img src="assets/piano.jpg" alt="Competition Medals">
+                <img src="assets/piano.jpg" loading="lazy" decoding="async">
             </div>
             <div class="cert-card">
                 <h3>AI Soccer & Pathfinding Competitions</h3>
                 <p>Won 4 medals 2016-2019 in robotics competitions for AI soccer and pathfinding.</p>
-                <img src="assets/medals.jpg" alt="Competition Medals">
+                <img src="assets/medals.jpg" loading="lazy" decoding="async">
             </div>
         </div>
     </section>
@@ -161,8 +166,6 @@
     
 
     <button id="back-to-top">↑</button>
-
-    <script src="js/filterbutton.js"></script>
     <script src="js/chatbot.js"></script>
     <script src="js/script.js"></script>
     <script src="js/main.js"></script>
