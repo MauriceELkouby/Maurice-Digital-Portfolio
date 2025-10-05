@@ -60,7 +60,8 @@ const revealObserver = new IntersectionObserver((entries, obs) => {
       obs.unobserve(e.target);
     }
   });
-}, { rootMargin: '0px 0px -10% 0px', threshold: 0.15 });
+}, { rootMargin: '80px 0px -5% 0px', threshold: 0.05 });
+
 
 function makeReveal(el) {
   el.classList.add('reveal');
@@ -136,47 +137,76 @@ document.querySelectorAll('section, .skill-bubble').forEach((el, i) => {
   function filterTo(type) {
     const cards = allCards();
 
-    // 1) measure FIRST
-    const first = new Map(cards.map(c => [c, c.getBoundingClientRect()]));
-
-    // 2) update visibility
+    // Make sure everything is measurable
     cards.forEach(c => {
-      const show = type === 'all' || c.dataset.type === type;
-      c.classList.toggle('is-hidden', !show);
+      c.style.display = '';
+      c.style.transition = '';
+      c.style.transform = '';
     });
 
-    // force layout
+    // 1) FIRST
+    const first = new Map(cards.map(c => [c, c.getBoundingClientRect()]));
+
+    // 2) Update visibility classes (NO display:none yet)
+    cards.forEach(c => {
+      const show = (type === 'all' || c.dataset.type === type);
+      c.classList.toggle('is-hidden', !show);
+      c.setAttribute('aria-hidden', String(!show));
+    });
+
+    // Force layout
     grid.getBoundingClientRect();
 
-    // 3) measure LAST
-    const last = new Map(allCards().map(c => [c, c.getBoundingClientRect()]));
+    // 3) LAST
+    const last = new Map(cards.map(c => [c, c.getBoundingClientRect()]));
 
-    // 4) INVERT + PLAY
-    isFiltering = true;
-    let pending = 0;
-    last.forEach((l, c) => {
-      const f = first.get(c);
-      if (!f) return;
+    // Build movers list (only cards that actually changed position/scale)
+    const movers = cards.filter(c => {
+      const f = first.get(c), l = last.get(c);
+      if (!f || !l) return false;
       const dx = f.left - l.left;
       const dy = f.top - l.top;
       const sx = f.width / Math.max(1, l.width);
+      c.__flip = { dx, dy, sx };
+      return Math.abs(dx) > 0.5 || Math.abs(dy) > 0.5 || Math.abs(sx - 1) > 0.001;
+    });
 
-      // Start inverted
+    // Finalize once (collapse hidden, re-kick reveals/AOS)
+    const finalize = () => {
+      cards.forEach(c => { if (c.classList.contains('is-hidden')) c.style.display = 'none'; });
+      isFiltering = false;
+      revealKick();
+      if (window.AOS && typeof AOS.refresh === 'function') AOS.refresh();
+      window.dispatchEvent(new Event('scroll'));
+    };
+
+    // If nothing moved, finish immediately
+    if (movers.length === 0) { finalize(); return; }
+
+    // 4) INVERT + PLAY only for movers
+    isFiltering = true;
+    let remaining = movers.length;
+
+    movers.forEach(c => {
+      const { dx, dy, sx } = c.__flip;
       c.style.transform = `translate(${dx}px, ${dy}px) scale(${sx})`;
       c.style.transition = 'none';
-      // Next frame: animate back to identity
+
       requestAnimationFrame(() => {
-        pending++;
         c.style.transition = 'transform 320ms cubic-bezier(.2,.7,.2,1)';
         c.style.transform = '';
-        const onEnd = () => {
+
+        const done = () => {
           c.style.transition = '';
-          c.removeEventListener('transitionend', onEnd);
-          if (--pending === 0) isFiltering = false;
+          c.removeEventListener('transitionend', done);
+          if (--remaining === 0) finalize();
         };
-        c.addEventListener('transitionend', onEnd, { once: true });
+        c.addEventListener('transitionend', done, { once: true });
       });
     });
+
+    // Safety net: if transitionend doesn't fire for any reason
+    setTimeout(() => { if (isFiltering) finalize(); }, 500);
   }
 })();
 
@@ -249,4 +279,18 @@ function formatDateRange(start, end) {
   if (s && e)   return `${s} – ${e}`;
   if (s && !e)  return `${s} – Present`;
   return e || s || '';
+}
+function revealKick() {
+  // Actively reveal elements that are now in view (no scroll required)
+  const vh = window.innerHeight;
+  document.querySelectorAll('.reveal:not(.in)').forEach(el => {
+    const r = el.getBoundingClientRect();
+    const inView = r.top < vh * 0.9 && r.bottom > vh * 0.1;
+    if (inView) {
+      el.classList.add('in');
+      try { revealObserver.unobserve(el); } catch(_) {}
+    }
+  });
+  // If you’re using AOS on some items, refresh it too
+  if (window.AOS && typeof AOS.refresh === 'function') AOS.refresh();
 }

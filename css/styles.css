@@ -187,7 +187,7 @@ body {
 .project-card.hidden {
     opacity: 0;
     pointer-events: none;
-    position: absolute;
+    /*position: absolute;*/
 }
 .project-card:hover {
     transform: translateY(-5px);
