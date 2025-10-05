@@ -34,7 +34,7 @@
       "start": "2025-05",
       "end": "2025-08",
       "desc": "Automated internal processes (API, VB), testing scripts, and tooling.",
-      "image": "assets/cgi.png",
+      "image": "assets/CGI.png",
       "link": "https://www.cgi.com/en"
     },
     {
@@ -54,7 +54,7 @@
       "start": "2024-06",
       "end": "2024-08",
       "desc": "Automated internal processes (SQL, Excel), testing scripts, and tooling.",
-      "image": "assets/cgi.png",
+      "image": "assets/CGI.png",
       "link": "https://www.cgi.com/en"
     }
     ],
