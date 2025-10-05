@@ -96,7 +96,9 @@ document.querySelectorAll('section, .skill-bubble').forEach((el, i) => {
     console.error('Failed to load projects from /json/data.json or json/data.json');
     return;
   }
-
+  if (Array.isArray(data.timeline)) {
+    renderTimeline(data.timeline);
+  }
   // Render cards
   data.projects.forEach(p => {
     const card = document.createElement('div');
@@ -202,3 +204,49 @@ document.addEventListener('pointerleave', () => {
     card.style.setProperty('--tiltY', `0deg`);
   });
 });
+
+function renderTimeline(items) {
+  const container = document.getElementById('timeline-container');
+  if (!container) return;
+
+  items = items.slice().sort((a,b) => new Date(b.start||'1900') - new Date(a.start||'1900'));
+  container.innerHTML = '';
+
+  items.forEach(item => {
+    const type = (item.type || '').toLowerCase();
+    const side = item.side || (type === 'education' ? 'left' : 'right');
+
+    const wrapper = document.createElement('div');
+    wrapper.className = `timeline-item ${side}`;
+
+    const imgHTML = item.image ? `<img class="thumb" src="${item.image}" alt="${item.org || item.title || 'logo'}">` : '';
+    const titleLine = item.org ? `<h3>${item.title||''}</h3>` : `<h3>${item.title||''}</h3>`;
+    const dateText  = formatDateRange(item.start, item.end);
+    wrapper.innerHTML = `
+      <div class="content" data-aos="fade-up" href="${item.link}">
+        ${imgHTML}
+        ${titleLine}
+        <span class="date">${dateText}</span>
+        <p>${item.desc || ''}</p>
+      </div>
+    `;
+
+    container.appendChild(wrapper);
+    // 👉 observe AFTER it’s in the DOM
+    makeReveal(wrapper);
+  });
+}
+
+
+function formatDateRange(start, end) {
+  const fmt = (s) => {
+    if (!s) return null;
+    const [y, m = '01'] = s.split('-');
+    const d = new Date(Number(y), Number(m) - 1, 1);
+    return d.toLocaleString(undefined, { month: 'short', year: 'numeric' });
+  };
+  const s = fmt(start), e = fmt(end);
+  if (s && e)   return `${s} – ${e}`;
+  if (s && !e)  return `${s} – Present`;
+  return e || s || '';
+}

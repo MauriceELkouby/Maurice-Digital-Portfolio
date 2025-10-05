@@ -16,6 +16,48 @@
         "OPC UA",
         "SCADA"
     ],
+    "timeline": [
+    {
+      "type": "education",
+      "title": "B.Eng. – Automated Production Engineering (GPA)",
+      "org": "École de Téchnologie Superieur",
+      "start": "2025-09",
+      "end": "2028-12",
+      "desc": "Robotics, Production, Industry 4.0, AI",
+      "image": "assets/ets.png",
+      "link": "https://www.etsmtl.ca/en"
+    },
+    {
+      "type": "work",
+      "title": "COOP – Developer",
+      "org": "CGI",
+      "start": "2025-05",
+      "end": "2025-08",
+      "desc": "Automated internal processes (API, VB), testing scripts, and tooling.",
+      "image": "assets/cgi.png",
+      "link": "https://www.cgi.com/en"
+    },
+    {
+      "type": "education",
+      "title": "DEC – Electrical Engineering Technology (Automation&Controls)",
+      "org": "Vanier College",
+      "start": "2022-09",
+      "end": "2025-06",
+      "desc": "Robotics, Industry 4.0, PLC, SCADA",
+      "image": "assets/vanier.png",
+      "link": "https://www.vaniercollege.qc.ca"
+    },
+    {
+      "type": "work",
+      "title": "Intern – Automation Analyst",
+      "org": "CGI",
+      "start": "2024-06",
+      "end": "2024-08",
+      "desc": "Automated internal processes (SQL, Excel), testing scripts, and tooling.",
+      "image": "assets/cgi.png",
+      "link": "https://www.cgi.com/en"
+    }
+    ],
         "projects": [
             {
                 "name": "Simulation of Automotive Assembly",
@@ -64,22 +106,6 @@
                 "type": "design",
                 "link": "https://drive.google.com/drive/folders/1fbgr3ORwRIwthdDfo_lYDUvr-2aGOY0c?usp=sharing",
                 "image": "assets/SafetySystemDesign.png"
-            },
-            {
-                "name": "Coop: Developer",
-                "description": "",
-                "technologies": [ "API development", "VB script", "Testing Automation", "C#" ],
-                "type": "intern",
-                "link": "https://www.cgi.com/en",
-                "image": "assets/ChargeBack.png"
-            },
-            {
-                "name": "Intern: Chargeback Automation",
-                "description": "Internship project focused on automating chargeback processes using SQL and Excel.",
-                "technologies": [ "Javascript", "Excel Formulas", "PostgreSQL", "Microsoft SQL" ],
-                "type": "intern",
-                "link": "https://www.cgi.com/en",
-                "image": "assets/ChargeBack.png"
             },
             {
                 "name": "Fullstack Banking application",

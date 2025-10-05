@@ -605,3 +605,114 @@ html, body {
 .stagger-3 { transition-delay: .18s; }
 .filter-buttons button { transition: transform .2s ease; }
 .filter-buttons button:hover { transform: translateY(-2px) scale(1.04); }
+
+/* ====== TIMELINE SECTION (lines + image) ====== */
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 2rem 0;
+}
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 2px;                 /* thinner center spine */
+  background-color: #FFFFFF;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 1.25rem 2rem;
+}
+.timeline-item.left { left: 0; text-align: right; }
+.timeline-item.right { left: 50%; }
+
+/* Card */
+.timeline-item .content {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.2rem 1.2rem 1.2rem 1.2rem;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+.timeline-item .content:hover { transform: translateY(-5px); }
+
+/* Thumbnail image */
+.timeline-item .thumb {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 0.6rem;
+  background: #FFFFFF;
+  display: inline-block;
+}
+
+/* Headings/date */
+.timeline-item h3 { color: #FFC93C; margin: 0.25rem 0 0.35rem; }
+.timeline-item .date { display: block; color: #8AFF80; font-size: 0.9rem; margin-bottom: 0.5rem; }
+
+/* —— Replace dots with connector LINES from spine to card —— */
+.timeline-item.left .content::before,
+.timeline-item.right .content::before {
+  content: '';
+  position: absolute;
+  top: 28px;                  /* aligns with title/thumb area; tweak as needed */
+  height: 2px;                /* the line thickness */
+  background: #ffffff;
+  width: 28px;                /* line length from spine to card */
+}
+
+/* Left side: line goes from spine to the right edge of the center */
+.timeline-item.left .content::before {
+  right: -28px;               /* push line to meet the spine */
+}
+
+/* Right side: line goes from spine to the left edge of the center */
+.timeline-item.right .content::before {
+  left: -28px;
+}
+
+/* ---------- MOBILE FIX: make both sides full-width and align connectors ---------- */
+@media (max-width: 768px) {
+  /* Set variables; tweak indent as you like */
+  .timeline { --spine-left: 20px; --indent: 2.75rem; }
+
+  /* Put the spine at a fixed x with no extra transform */
+  .timeline::after {
+    left: var(--spine-left);
+    transform: none; /* remove the desktop translateX(-50%) */
+  }
+
+  /* Force BOTH side variants to left:0 (higher specificity than .timeline-item alone) */
+  .timeline-item,
+  .timeline-item.left,
+  .timeline-item.right {
+    width: 100%;
+    left: 0;
+    text-align: left;
+    padding-left: var(--indent);
+  }
+
+  /* Connector auto-sizes from card edge to the spine (no gaps) */
+  .timeline-item .content::before {
+    right: auto;
+    left: calc(-1 * (var(--indent) - var(--spine-left)));
+    width: calc(var(--indent) - var(--spine-left) + 1px); /* +1px guards subpixel gaps */
+    height: 2px;
+    background: #ffffff;
+  }
+}
+
+/* Tighter phones */
+@media (max-width: 520px) {
+  .timeline { --spine-left: 16px; --indent: 2.25rem; }
+}
+
+
+
