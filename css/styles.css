@@ -565,7 +565,6 @@ html, body {
   padding-top: 0 !important;
 }
 
-/* Optional: hide leftover tooltip/balloon & gadget bits */
 #goog-gt-tt,
 .goog-te-balloon-frame,
 .goog-te-gadget-icon,
@@ -591,7 +590,6 @@ html, body {
 /* Hidden after filter */
 .project-card.is-hidden { display: none; }
 
-/* (Optional) isolate paint/layout for each card */
 .project-card { contain: layout paint; }
 
 
@@ -599,7 +597,6 @@ html, body {
 @media (prefers-reduced-motion: reduce) {
   .reveal, .reveal.in, .project-card { transition: none !important; transform: none !important; }
 }
-/* Optional stagger helpers */
 .stagger-1 { transition-delay: .06s; }
 .stagger-2 { transition-delay: .12s; }
 .stagger-3 { transition-delay: .18s; }
@@ -616,7 +613,7 @@ html, body {
 .timeline::after {
   content: '';
   position: absolute;
-  width: 2px;                 /* thinner center spine */
+  width: 2px;
   background-color: #FFFFFF;
   top: 0;
   bottom: 0;
@@ -657,20 +654,19 @@ html, body {
 .timeline-item h3 { color: #FFC93C; margin: 0.25rem 0 0.35rem; }
 .timeline-item .date { display: block; color: #8AFF80; font-size: 0.9rem; margin-bottom: 0.5rem; }
 
-/* —— Replace dots with connector LINES from spine to card —— */
 .timeline-item.left .content::before,
 .timeline-item.right .content::before {
   content: '';
   position: absolute;
-  top: 28px;                  /* aligns with title/thumb area; tweak as needed */
-  height: 2px;                /* the line thickness */
+  top: 28px;
+  height: 2px;
   background: #ffffff;
-  width: 28px;                /* line length from spine to card */
+  width: 28px;
 }
 
 /* Left side: line goes from spine to the right edge of the center */
 .timeline-item.left .content::before {
-  right: -28px;               /* push line to meet the spine */
+  right: -28px;
 }
 
 /* Right side: line goes from spine to the left edge of the center */
@@ -680,16 +676,12 @@ html, body {
 
 /* ---------- MOBILE FIX: make both sides full-width and align connectors ---------- */
 @media (max-width: 768px) {
-  /* Set variables; tweak indent as you like */
   .timeline { --spine-left: 20px; --indent: 2.75rem; }
-
-  /* Put the spine at a fixed x with no extra transform */
   .timeline::after {
     left: var(--spine-left);
-    transform: none; /* remove the desktop translateX(-50%) */
+    transform: none
   }
 
-  /* Force BOTH side variants to left:0 (higher specificity than .timeline-item alone) */
   .timeline-item,
   .timeline-item.left,
   .timeline-item.right {
@@ -699,11 +691,10 @@ html, body {
     padding-left: var(--indent);
   }
 
-  /* Connector auto-sizes from card edge to the spine (no gaps) */
   .timeline-item .content::before {
     right: auto;
     left: calc(-1 * (var(--indent) - var(--spine-left)));
-    width: calc(var(--indent) - var(--spine-left) + 1px); /* +1px guards subpixel gaps */
+    width: calc(var(--indent) - var(--spine-left) + 1px);
     height: 2px;
     background: #ffffff;
   }

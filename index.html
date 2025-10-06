@@ -18,7 +18,6 @@
 
   gtag('config', 'G-Q7C3JTG7CV');
 </script>
-<!-- Move this to just above </body> and defer -->
 <script defer src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>window.addEventListener('DOMContentLoaded',()=>AOS.init({ once:true, duration:600, offset:120 }));</script>
 
@@ -150,11 +149,9 @@
     <div id="chatbot-container">
     <button id="chat-toggle" aria-controls="chatbot" aria-expanded="false" onclick="gtag('event', 'chatbot_opened', { 'label': 'Chat Toggle' });">💬 Chat</button>
 
-    <!-- 👇 Add this -->
     <div id="chat-nudge" role="status" aria-live="polite">
         Got a question? Click chat!
     </div>
-    <!-- 👆 Add this -->
 
     <div id="chatbot" role="dialog" aria-label="MauriceBot">
         <div id="chat-header">

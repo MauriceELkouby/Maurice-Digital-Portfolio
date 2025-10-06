@@ -5,7 +5,7 @@
     document.head.appendChild(s);
   })();
 
-  // 2) Init into our hidden container (required)
+  // 2) Init into our hidden container
   function googleTranslateElementInit() {
     new google.translate.TranslateElement({
       pageLanguage: 'en',
@@ -25,7 +25,7 @@
     } catch (e) {}
   }
 
-  // 4) Click handler: set cookie then reload (don’t touch location.hash)
+  // 4) Click handler: set cookie then reload
   document.addEventListener('click', function (e) {
     const btn = e.target.closest('[data-lang]');
     if (!btn) return;
@@ -33,6 +33,3 @@
     setGoogTrans('/en/' + to);
     location.reload(); // cookie makes Google auto-translate on load
   });
-
-  // 5) Optional: if a cookie already exists, nothing more to do.
-  // Google will read it on page load and translate automatically.

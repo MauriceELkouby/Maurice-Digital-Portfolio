@@ -205,7 +205,6 @@ document.querySelectorAll('section, .skill-bubble').forEach((el, i) => {
       });
     });
 
-    // Safety net: if transitionend doesn't fire for any reason
     setTimeout(() => { if (isFiltering) finalize(); }, 500);
   }
 })();
@@ -262,7 +261,6 @@ function renderTimeline(items) {
     `;
 
     container.appendChild(wrapper);
-    // 👉 observe AFTER it’s in the DOM
     makeReveal(wrapper);
   });
 }

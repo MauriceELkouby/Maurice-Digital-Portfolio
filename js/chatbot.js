@@ -6,7 +6,6 @@ window.onload = function () {
   const chatbot = document.getElementById("chatbot");
   const closeChat = document.getElementById("close-chat");
 
-  // 👇 new: the nudge bubble
   const chatNudge = document.getElementById("chat-nudge");
   const NUDGE_SEEN_KEY = "maurice_chat_nudge_seen";
 
@@ -109,13 +108,11 @@ window.onload = function () {
     });
   }
 
-  // Don’t show again if they hover the chat button (counts as discovery)
   chatToggle.addEventListener("mouseenter", () => hideNudge(true));
 
   // Show on first load (with delay)
   scheduleNudge();
 
-  // If they close the chat quickly and haven’t seen the nudge, reschedule once
   closeChat.addEventListener("click", () => {
     if (localStorage.getItem(NUDGE_SEEN_KEY) !== "1") scheduleNudge();
   });
