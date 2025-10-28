@@ -156,6 +156,14 @@
                 "image": "assets/BoggleSolver.png"
             },
             {
+                "name": "GameJam: Newcomer",
+                "description": "Bullet hell game made for a GameJam.",
+                "technologies": [ "C#", "Unity", "3D" ],
+                "type": "games",
+                "link": "https://mokoolb.itch.io/newcomer",
+                "image": "assets/newcomer.jpg"
+            },
+            {
                 "name": "GameJam: Hero's Merchant",
                 "description": "Merchant simulation game made for a GameJam.",
                 "technologies": [ "C#", "Unity", "3D" ],
