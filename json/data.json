@@ -144,7 +144,7 @@
             {
                 "name": "Music Sharing App",
                 "description": "A mobile app for sharing music using Firebase.",
-                "technologies": [ "C", "Android Studio", "FireBase", "Github" ],
+                "technologies": [ "Dart", "Android Studio", "FireBase", "Github" ],
                 "type": "software",
                 "link": "https://github.com/MauriceELkouby/fm_radio",
                 "image": "assets/MusicApp.png"
