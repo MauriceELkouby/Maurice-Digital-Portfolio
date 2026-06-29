@@ -9,15 +9,6 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <link rel="preload" as="video" href="assets/montage.mp4" type="video/mp4">
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7C3JTG7CV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Q7C3JTG7CV');
-</script>
 <script defer src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>window.addEventListener('DOMContentLoaded',()=>AOS.init({ once:true, duration:600, offset:120 }));</script>
 
@@ -79,10 +70,10 @@
         <h2>Projects</h2>
         <div class="filter-buttons">
             <button data-type="all">All</button>
-            <button data-type="sim" onclick="gtag('event', 'simulation_selected', { 'label': 'Simulation Filter' })">Simulation</button>
-            <button data-type="design" onclick="gtag('event', 'design_selected', { 'label': 'Design Filter' })">Design</button>
-            <button data-type="software" onclick="gtag('event', 'software_selected', { 'label': 'Software Filter' })">Software</button>
-            <button data-type="games" onclick="gtag('event', 'gamedev_selected', { 'label': 'GameDev Filter' })">GameDev</button>
+            <button data-type="sim")">Simulation</button>
+            <button data-type="design")">Design</button>
+            <button data-type="software")">Software</button>
+            <button data-type="games")">GameDev</button>
         </div>
         <div class="projects-grid" id="project-cards">
         </div>
@@ -147,7 +138,7 @@
 
     <!-- Chatbot Widget -->
     <div id="chatbot-container">
-    <button id="chat-toggle" aria-controls="chatbot" aria-expanded="false" onclick="gtag('event', 'chatbot_opened', { 'label': 'Chat Toggle' });">💬 Chat</button>
+    <button id="chat-toggle" aria-controls="chatbot" aria-expanded="false");">💬 Chat</button>
 
     <div id="chat-nudge" role="status" aria-live="polite">
         Got a question? Click chat!
