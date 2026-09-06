@@ -77,7 +77,6 @@
             {
                 "name": "Simulation of Automotive Assembly",
                 "featured": true,
-                "linkLabel": "View case study",
                 "description": "A factory simulation project for automotive assembly using Unity, PLCs, and GEMMA.",
                 "technologies": [ "Unity", "C#", "C++", "PLC", "GEMMA", "OPC UA", "Ignition", "MYSQL" ],
                 "type": "sim",
@@ -87,7 +86,6 @@
             {
                 "name": "Simulation of CNC",
                 "featured": true,
-                "linkLabel": "View case study",
                 "description": "CNC machine simulation using PLC, OPC UA, and FactoryIO with GEMMA methodology.",
                 "technologies": [ "PLC", "GEMMA", "OPC UA", "Ignition", "MYSQL", "FactoryIO" ],
                 "type": "sim",

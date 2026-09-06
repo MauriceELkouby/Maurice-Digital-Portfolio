@@ -1,6 +1,7 @@
 const navLinks = document.querySelector('#navbar .nav-links');
 const menuButton = document.querySelector('.menu-toggle');
 const backToTop = document.getElementById('back-to-top');
+const t = (key) => window.portfolioI18n?.t(key) || key;
 
 if (menuButton && navLinks) {
   menuButton.addEventListener('click', () => {
@@ -63,7 +64,7 @@ function createDetailDialog() {
   const panel = createElement('div', 'detail-dialog-panel');
   const close = createElement('button', 'detail-dialog-close', '×');
   close.type = 'button';
-  close.setAttribute('aria-label', 'Close details');
+  close.setAttribute('aria-label', t('closeDetails'));
   close.addEventListener('click', () => dialog.close());
 
   const body = createElement('div', 'detail-dialog-body');
@@ -96,7 +97,7 @@ function openDetails(item, kind, trigger) {
   }
 
   const content = createElement('div', 'detail-dialog-content');
-  const eyebrow = createElement('p', 'detail-dialog-eyebrow', kind === 'project' ? projectTypeLabel(item.type) : item.type === 'education' ? 'Education' : 'Experience');
+  const eyebrow = createElement('p', 'detail-dialog-eyebrow', kind === 'project' ? projectTypeLabel(item.type) : item.type === 'education' ? t('education') : t('experience'));
   const title = createElement('h2', '', item.name || item.title || 'Details');
   title.id = 'detail-dialog-title';
   content.append(eyebrow, title);
@@ -111,13 +112,13 @@ function openDetails(item, kind, trigger) {
   const skills = kind === 'project' ? item.technologies || [] : timelineSkills(item);
   if (skills.length) {
     const list = createElement('ul', 'technology-list');
-    list.setAttribute('aria-label', kind === 'project' ? 'Technologies used' : 'Areas of focus');
+    list.setAttribute('aria-label', kind === 'project' ? t('technologiesUsed') : t('areasOfFocus'));
     skills.forEach((skill) => list.append(createElement('li', 'skill-bubble', skill)));
     content.append(list);
   }
 
   if (item.link) {
-    const link = createElement('a', 'button button-primary detail-dialog-link', kind === 'project' ? (item.linkLabel || 'Open full project') : 'Visit organization');
+    const link = createElement('a', 'button button-primary detail-dialog-link', kind === 'project' ? t('openFullProject') : t('visitOrganization'));
     link.href = item.link;
     link.target = '_blank';
     link.rel = 'noopener noreferrer';
@@ -132,14 +133,14 @@ function openDetails(item, kind, trigger) {
 }
 
 function projectTypeLabel(type) {
-  return ({ sim: 'Industrial simulation', design: 'Engineering design', software: 'Software project', games: 'Game development' })[type] || 'Project';
+  return ({ sim: t('industrialSimulation'), design: t('engineeringDesign'), software: t('softwareProject'), games: t('gameDevelopment') })[type] || t('project');
 }
 
 function expandedDescription(item, kind) {
   if (item.longDescription) return item.longDescription;
   if (kind === 'timeline') return item.desc || '';
   const technologyText = (item.technologies || []).join(', ');
-  const followUp = technologyText ? ` The work brings together ${technologyText} in one practical implementation.` : '';
+  const followUp = technologyText ? t('technologySentence').replace('{technologies}', technologyText) : '';
   return `${item.description || ''}${followUp}`;
 }
 
@@ -151,7 +152,7 @@ function timelineSkills(item) {
 function makeCardInteractive(card, item, kind) {
   card.tabIndex = 0;
   card.setAttribute('role', 'button');
-  card.setAttribute('aria-label', `Open details for ${item.name || item.title || item.org || 'this item'}`);
+  card.setAttribute('aria-label', `${t('openDetailsFor')} ${item.name || item.title || item.org || ''}`);
 
   const open = () => openDetails(item, kind, card);
   card.addEventListener('click', (event) => {
@@ -172,12 +173,13 @@ async function loadPortfolio() {
 
   let data;
   try {
-    const response = await fetch('json/data.json', { cache: 'no-store' });
+    const language = window.portfolioI18n?.lang === 'fr' ? 'fr' : 'en';
+    const response = await fetch(language === 'fr' ? 'json/data.fr.json' : 'json/data.json', { cache: 'no-store' });
     if (!response.ok) throw new Error(`Portfolio data returned ${response.status}`);
     data = await response.json();
   } catch (error) {
     console.error(error);
-    grid.append(createElement('p', 'load-error', 'Projects could not be loaded. Please refresh the page.'));
+    grid.append(createElement('p', 'load-error', t('loadError')));
     return;
   }
 
@@ -191,7 +193,7 @@ async function loadPortfolio() {
     const picture = document.createElement('picture');
     const image = document.createElement('img');
     image.src = project.image || '';
-    image.alt = project.name ? `${project.name} project preview` : 'Project preview';
+    image.alt = project.name ? `${project.name} — ${t('projectPreview')}` : t('projectPreview');
     image.loading = 'lazy';
     image.decoding = 'async';
     image.width = 800;
@@ -203,25 +205,16 @@ async function loadPortfolio() {
     content.append(createElement('p', 'project-summary', project.description || ''));
 
     const technologies = createElement('ul', 'technology-list');
-    technologies.setAttribute('aria-label', 'Technologies used');
+    technologies.setAttribute('aria-label', t('technologiesUsed'));
     (project.technologies || []).forEach((technology) => {
       technologies.append(createElement('li', 'skill-bubble', technology));
     });
     content.append(technologies);
 
     const actions = createElement('div', 'card-actions');
-    const detailsCue = createElement('span', 'card-details-cue', 'Open details');
+    const detailsCue = createElement('span', 'card-details-cue', t('openDetails'));
     detailsCue.setAttribute('aria-hidden', 'true');
     actions.append(detailsCue);
-
-    if (project.link) {
-      const link = createElement('a', '', project.linkLabel || 'View project');
-      link.href = project.link;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      link.append(document.createTextNode(' ↗'));
-      actions.append(link);
-    }
 
     content.append(actions);
 
@@ -266,7 +259,7 @@ function renderTimeline(items) {
     if (item.org) content.append(createElement('p', 'organization', item.org));
     content.append(createElement('span', 'date', formatDateRange(item.start, item.end)));
     content.append(createElement('p', '', item.desc || ''));
-    const detailsCue = createElement('span', 'card-details-cue', 'Open details');
+    const detailsCue = createElement('span', 'card-details-cue', t('openDetails'));
     detailsCue.setAttribute('aria-hidden', 'true');
     content.append(detailsCue);
     wrapper.append(content);
@@ -280,11 +273,12 @@ function formatDateRange(start, end) {
   const format = (value) => {
     if (!value) return null;
     const [year, month = '01'] = value.split('-');
-    return new Date(Number(year), Number(month) - 1, 1).toLocaleString(undefined, { month: 'short', year: 'numeric' });
+    const locale = window.portfolioI18n?.lang === 'fr' ? 'fr-CA' : 'en-CA';
+    return new Date(Number(year), Number(month) - 1, 1).toLocaleString(locale, { month: 'short', year: 'numeric' });
   };
   const startText = format(start);
   const endText = format(end);
-  return startText ? `${startText} – ${endText || 'Present'}` : endText || '';
+  return startText ? `${startText} – ${endText || t('present')}` : endText || '';
 }
 
 loadPortfolio();

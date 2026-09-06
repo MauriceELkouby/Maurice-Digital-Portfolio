@@ -1,35 +1,42 @@
-// 1) Load Google’s script
-  (function () {
-    var s = document.createElement('script');
-    s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-    document.head.appendChild(s);
-  })();
-
-  // 2) Init into our hidden container
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'en',
-      includedLanguages: 'en,fr',
-      autoDisplay: false
-    }, 'google_translate_container');
+const translations = {
+  en: {
+    skipContent: 'Skip to content', navHome: 'Home', navAbout: 'About', navTimeline: 'Timeline', navProjects: 'Projects', navCertifications: 'Certifications', navContact: 'Contact',
+    heroEyebrow: 'Automation · Robotics · Industrial Software', heroTitle: 'I build systems that connect machines, software, and people.', heroLead: 'Automation engineering student and technologist working across PLC, SCADA, robotics, industrial simulation, and full-stack development.', exploreWork: 'Explore featured work', letsConnect: "Let's connect",
+    aboutTitle: 'About Me', aboutIntro: "I'm an automation technologist studying Automated Production Engineering at ÉTS. I enjoy turning complex requirements into practical systems, whether that means programming a PLC, connecting a SCADA interface, simulating a production line, or building supporting software.", aboutExtra: 'Game development and music keep my creative side active and influence how I approach interaction, iteration, and teamwork.',
+    skillsTitle: 'Skills', skillAutomation: 'Industrial automation', skillAutomationList: 'PLC, HMI, SCADA, robotics', skillControl: 'Control methods', skillConnected: 'Connected systems', skillConnectedList: 'Industry 4.0, OPC UA, MQTT, SQL', skillSoftware: 'Software', skillGames: 'Simulation & games', skillGamesList: 'Unity, Factory I/O, game development', timelineTitle: 'Timeline', projectsTitle: 'Projects', projectsIntro: "A selection of systems I've designed, programmed, and shipped across automation, software, and game development.", filterFeatured: 'Featured', filterAll: 'All', filterSimulation: 'Simulation', filterDesign: 'Design', filterSoftware: 'Software', filterGames: 'Game development', certificationsTitle: 'Certifications & Awards', viewCertificates: 'View certificates', contactTitle: 'Contact Me', contactIntro: "Have an automation, simulation, or software challenge in mind? I'd be glad to hear about it.", emailMe: 'Email Me', connectLinkedIn: 'Connect on LinkedIn', askBot: 'Ask MauriceBot', botNudge: "Ask me about Maurice's work.", botPlaceholder: 'Ask me something...', send: 'Send',
+    certCapm: 'Certified associate in project management', certIgnitionTitle: 'Inductive University Credential', certIgnition: 'Credential in building mobile and desktop SCADA applications with Ignition.', certSafetyTitle: 'Associate Safety Professional', certSafety: 'ASP Construction Safety and Industrial Safety', certAgileTitle: 'Agile for Software Development', certAgile: 'Skillsoft course covering agile fundamentals and software development methodologies.', certComplianceTitle: 'Corporate Compliance', certCompliance: 'Completed compliance courses involving AI, data safety, and ethical business.', certCccTitle: 'Canadian Computing Competition (CCC)', certCcc: 'Top 25% in the CCC, showcasing algorithmic problem-solving in C++.', certMusicTitle: 'Royal Conservatory Level 9', certMusic: 'The Royal Conservatory is one of the largest and most respected music education institutions in the world.', certRoboticsTitle: 'AI Soccer & Pathfinding Competitions', certRobotics: 'Won four medals from 2016 to 2019 in robotics competitions for AI soccer and pathfinding.', closeDetails: 'Close details', education: 'Education', experience: 'Experience', technologiesUsed: 'Technologies used', areasOfFocus: 'Areas of focus', openFullProject: 'Open full project', visitOrganization: 'Visit organization', industrialSimulation: 'Industrial simulation', engineeringDesign: 'Engineering design', softwareProject: 'Software project', gameDevelopment: 'Game development', project: 'Project', technologySentence: ' The work brings together {technologies} in one practical implementation.', openDetailsFor: 'Open details for', openDetails: 'Open details', projectPreview: 'project preview', present: 'Present', loadError: 'Projects could not be loaded. Please refresh the page.'
+  },
+  fr: {
+    skipContent: 'Aller au contenu', navHome: 'Accueil', navAbout: 'À propos', navTimeline: 'Parcours', navProjects: 'Projets', navCertifications: 'Certifications', navContact: 'Contact',
+    heroEyebrow: 'Automatisation · Robotique · Logiciels industriels', heroTitle: 'Je conçois des systèmes qui relient les machines, les logiciels et les personnes.', heroLead: "Étudiant et technologue en génie de l'automatisation, je travaille avec les automates programmables, les systèmes SCADA, la robotique, la simulation industrielle et le développement logiciel.", exploreWork: 'Découvrir mes projets vedettes', letsConnect: 'Communiquons',
+    aboutTitle: 'À propos de moi', aboutIntro: "Je suis technologue en automatisation et j'étudie en génie de la production automatisée à l'ÉTS. J'aime transformer des exigences complexes en systèmes pratiques, qu'il s'agisse de programmer un automate, de connecter une interface SCADA, de simuler une ligne de production ou de développer les logiciels nécessaires.", aboutExtra: "Le développement de jeux et la musique nourrissent ma créativité et influencent ma façon d'aborder l'interaction, l'itération et le travail d'équipe.",
+    skillsTitle: 'Compétences', skillAutomation: 'Automatisation industrielle', skillAutomationList: 'Automates, IHM, SCADA, robotique', skillControl: 'Méthodes de contrôle', skillConnected: 'Systèmes connectés', skillConnectedList: 'Industrie 4.0, OPC UA, MQTT, SQL', skillSoftware: 'Logiciels', skillGames: 'Simulation et jeux', skillGamesList: 'Unity, Factory I/O, développement de jeux', timelineTitle: 'Parcours', projectsTitle: 'Projets', projectsIntro: "Une sélection de systèmes que j'ai conçus, programmés et réalisés dans les domaines de l'automatisation, du logiciel et du jeu vidéo.", filterFeatured: 'En vedette', filterAll: 'Tous', filterSimulation: 'Simulation', filterDesign: 'Conception', filterSoftware: 'Logiciel', filterGames: 'Jeux vidéo', certificationsTitle: 'Certifications et distinctions', viewCertificates: 'Voir les certificats', contactTitle: 'Me joindre', contactIntro: "Vous avez un défi en automatisation, en simulation ou en logiciel? Il me fera plaisir d'en discuter.", emailMe: "M'envoyer un courriel", connectLinkedIn: 'Communiquer sur LinkedIn', askBot: 'Demander à MauriceBot', botNudge: 'Posez-moi une question sur le travail de Maurice.', botPlaceholder: 'Posez une question...', send: 'Envoyer',
+    certCapm: 'Associé certifié en gestion de projet', certIgnitionTitle: "Certification de l'Université Inductive", certIgnition: "Certification en création d'applications SCADA mobiles et de bureau avec Ignition.", certSafetyTitle: 'Certification en santé et sécurité', certSafety: 'Santé et sécurité dans les secteurs de la construction et de l’industrie', certAgileTitle: 'Méthodes agiles pour le développement logiciel', certAgile: 'Formation Skillsoft sur les principes agiles et les méthodes de développement logiciel.', certComplianceTitle: 'Conformité en entreprise', certCompliance: "Formations sur l'intelligence artificielle, la sécurité des données et les pratiques commerciales éthiques.", certCccTitle: 'Concours canadien d’informatique (CCC)', certCcc: 'Classement dans le premier quart du CCC, démontrant mes compétences en résolution de problèmes algorithmiques en C++.', certMusicTitle: 'Conservatoire royal – Niveau 9', certMusic: "Le Conservatoire royal est l'un des établissements d'enseignement musical les plus importants et respectés au monde.", certRoboticsTitle: 'Compétitions de soccer robotisé et de recherche de chemin', certRobotics: 'Quatre médailles remportées de 2016 à 2019 lors de compétitions de robotique en soccer autonome et en recherche de chemin.', closeDetails: 'Fermer les détails', education: 'Formation', experience: 'Expérience', technologiesUsed: 'Technologies utilisées', areasOfFocus: "Domaines d'expertise", openFullProject: 'Ouvrir le projet complet', visitOrganization: "Visiter le site de l'organisation", industrialSimulation: 'Simulation industrielle', engineeringDesign: 'Conception technique', softwareProject: 'Projet logiciel', gameDevelopment: 'Développement de jeux', project: 'Projet', technologySentence: " Ce projet réunit {technologies} dans une réalisation concrète.", openDetailsFor: 'Ouvrir les détails de', openDetails: 'Ouvrir les détails', projectPreview: 'aperçu du projet', present: "Aujourd'hui", loadError: "Impossible de charger les projets. Veuillez actualiser la page."
   }
+};
 
-  // 3) Robust cookie setter (current host + bare domain)
-  function setGoogTrans(val) {
-    var d = new Date(); d.setTime(d.getTime() + 365*24*60*60*1000);
-    var exp = ';expires=' + d.toUTCString() + ';path=/';
-    document.cookie = 'googtrans=' + val + exp; // current host
-    try {
-      var baseDomain = location.hostname.replace(/^www\./, '');
-      document.cookie = 'googtrans=' + val + exp + ';domain=' + baseDomain;
-    } catch (e) {}
-  }
+const savedLanguage = localStorage.getItem('portfolio_language');
+const language = savedLanguage === 'fr' ? 'fr' : 'en';
+const translate = (key) => translations[language][key] || translations.en[key] || key;
 
-  // 4) Click handler: set cookie then reload
-  document.addEventListener('click', function (e) {
-    const btn = e.target.closest('[data-lang]');
-    if (!btn) return;
-    const to = btn.getAttribute('data-lang'); // 'en' or 'fr'
-    setGoogTrans('/en/' + to);
-    location.reload(); // cookie makes Google auto-translate on load
+window.portfolioI18n = { lang: language, t: translate };
+document.documentElement.lang = language;
+document.title = language === 'fr' ? "Maurice Elkouby | Portfolio d'ingénierie" : 'Maurice Elkouby | Engineering Portfolio';
+
+document.querySelectorAll('[data-i18n]').forEach((element) => {
+  element.textContent = translate(element.dataset.i18n);
+});
+document.querySelectorAll('[data-i18n-placeholder]').forEach((element) => {
+  element.placeholder = translate(element.dataset.i18nPlaceholder);
+});
+
+document.querySelectorAll('[data-lang]').forEach((button) => {
+  const active = button.dataset.lang === language;
+  button.classList.toggle('active', active);
+  button.setAttribute('aria-pressed', String(active));
+  button.addEventListener('click', () => {
+    if (button.dataset.lang === language) return;
+    localStorage.setItem('portfolio_language', button.dataset.lang);
+    location.reload();
   });
+});

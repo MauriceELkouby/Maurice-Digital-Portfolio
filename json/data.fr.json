@@ -1,0 +1,215 @@
+{
+  "name": "Maurice Elkouby",
+  "title": "Ingénieur en automatisation",
+  "bio": "",
+  "skills": ["Développement full stack", "Automatisation industrielle", "Logiciels de simulation", "Programmation d'automates", "Robotique", "Développement Flutter", "Python", "C#", "C++", "Unity", "OPC UA", "SCADA"],
+  "timeline": [
+    {
+      "type": "education",
+      "title": "B. Ing. – Génie de la production automatisée",
+      "org": "École de technologie supérieure",
+      "start": "2025-09",
+      "end": "2028-12",
+      "desc": "Formation en robotique, production, industrie 4.0 et intelligence artificielle.",
+      "skills": ["Robotique", "Production", "Industrie 4.0", "Intelligence artificielle"],
+      "image": "assets/ets.png",
+      "link": "https://www.etsmtl.ca/"
+    },
+    {
+      "type": "work",
+      "title": "Stage coop – Développeur de logiciels industriels",
+      "org": "Centris Technologies",
+      "start": "2026-08",
+      "end": "2026-12",
+      "desc": "Développement de projets clients faisant appel aux automates programmables, aux systèmes SCADA et aux technologies MES.",
+      "skills": ["Automates programmables", "SCADA", "MES", "Logiciels industriels"],
+      "image": "assets/centristech.jpg",
+      "link": "https://centristech.com/"
+    },
+    {
+      "type": "work",
+      "title": "Stage coop – Développeur",
+      "org": "CGI",
+      "start": "2025-05",
+      "end": "2025-08",
+      "desc": "Automatisation de processus internes, développement d'API et d'outils en Visual Basic, ainsi que création de scripts de test.",
+      "skills": ["Développement d'API", "Visual Basic", "Tests", "Outils d'automatisation"],
+      "image": "assets/CGI.png",
+      "link": "https://www.cgi.com/fr"
+    },
+    {
+      "type": "education",
+      "title": "DEC – Technologie du génie électrique (automatisation et contrôle)",
+      "org": "Collège Vanier",
+      "start": "2022-09",
+      "end": "2025-06",
+      "desc": "Formation en robotique, industrie 4.0, automates programmables et systèmes SCADA.",
+      "skills": ["Robotique", "Industrie 4.0", "Automates programmables", "SCADA"],
+      "image": "assets/vanier.png",
+      "link": "https://www.vaniercollege.qc.ca"
+    },
+    {
+      "type": "work",
+      "title": "Stagiaire – Analyste en automatisation",
+      "org": "CGI",
+      "start": "2024-06",
+      "end": "2024-08",
+      "desc": "Automatisation de processus internes avec SQL et Excel, création de scripts de test et développement d'outils.",
+      "skills": ["SQL", "Excel", "Tests", "Automatisation de processus"],
+      "image": "assets/CGI.png",
+      "link": "https://www.cgi.com/fr"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Simulation d'une chaîne d'assemblage automobile",
+      "featured": true,
+      "description": "Simulation d'une usine d'assemblage automobile réalisée avec Unity, des automates programmables et la méthode GEMMA.",
+      "technologies": ["Unity", "C#", "C++", "PLC", "GEMMA", "OPC UA", "Ignition", "MySQL"],
+      "type": "sim",
+      "link": "https://drive.google.com/drive/folders/1Y8s6SkZO-fFFpIx0wsETMNV8dad3PsW0?usp=sharing",
+      "image": "assets/car.webp"
+    },
+    {
+      "name": "Simulation d'une machine CNC",
+      "featured": true,
+      "description": "Simulation d'une machine CNC utilisant un automate programmable, OPC UA, Factory I/O et la méthode GEMMA.",
+      "technologies": ["PLC", "GEMMA", "OPC UA", "Ignition", "MySQL", "Factory I/O"],
+      "type": "sim",
+      "link": "https://drive.google.com/drive/folders/1mQm079HEIClcmgj07xEhXJ1l_QnODDye?usp=sharing",
+      "image": "assets/CNCSIM.webp"
+    },
+    {
+      "name": "Simulation d'une régulation PID en cascade",
+      "featured": true,
+      "description": "Simulation d'un système de réservoirs à régulation PID en cascade avec Factory I/O.",
+      "technologies": ["PLC", "PID", "HMI", "Factory I/O"],
+      "type": "sim",
+      "link": "https://drive.google.com/drive/folders/1KEBzkox9bhez3gLPUu4nL7aHgjm00nmf?usp=sharing",
+      "image": "assets/Tank.webp"
+    },
+    {
+      "name": "Panneau de contrôle Raspberry Pi et LOGO!",
+      "featured": true,
+      "description": "Projet de conception intégrant un Raspberry Pi et un automate Siemens LOGO! dans un système de contrôle hybride.",
+      "technologies": ["Python", "Câblage", "MQTT", "Ignition"],
+      "type": "design",
+      "link": "https://drive.google.com/drive/folders/16ob-_zK2tY3BsASLBeJTgN7N5cdVIUC1?usp=sharing",
+      "image": "assets/panel.webp"
+    },
+    {
+      "name": "Conception d'un réseau électrique",
+      "description": "Conception et simulation d'un réseau électrique à courant alternatif comprenant des génératrices et une analyse avec MATLAB.",
+      "technologies": ["Courant alternatif", "Génératrice", "MATLAB"],
+      "type": "design",
+      "link": "https://drive.google.com/drive/folders/1XhZBYbYiZ_7UDiuNRuMgSlsplEkjL_Tc?usp=sharing",
+      "image": "assets/Grid.png"
+    },
+    {
+      "name": "Conception d'un système de sécurité",
+      "description": "Projet de conception technique portant sur les systèmes de sécurité, les schémas P&ID et les diagrammes de boucle.",
+      "technologies": ["AutoCAD", "P&ID", "Diagramme de boucle"],
+      "type": "design",
+      "link": "https://drive.google.com/drive/folders/1fbgr3ORwRIwthdDfo_lYDUvr-2aGOY0c?usp=sharing",
+      "image": "assets/SafetySystemDesign.webp"
+    },
+    {
+      "name": "Application bancaire full stack",
+      "description": "Base de données dorsale avec comptes uniques, accompagnée d'un site Web et d'un module Minecraft comme interfaces clientes.",
+      "technologies": ["Java", "Développement d'API", "Python", "Vercel", "JavaScript", "PostgreSQL"],
+      "type": "software",
+      "link": "https://drive.google.com/drive/folders/1X0K7CHx_LLbA3blVyGif59fuE0UzvBDy?usp=sharing",
+      "image": "assets/bank.jpg"
+    },
+    {
+      "name": "Serveur infonuagique personnalisé",
+      "description": "Serveur infonuagique hébergé localement sur un Raspberry Pi et accessible par une application personnalisée.",
+      "technologies": ["C", "Développement d'API", "Python", "Android Studio"],
+      "type": "software",
+      "link": "https://drive.google.com/drive/folders/1maqHqKfwkAA1HiYp88NJlO-mPoOxFQGZ?usp=sharing",
+      "image": "assets/cloud.jpg"
+    },
+    {
+      "name": "Site Web de portfolio",
+      "featured": true,
+      "description": "Portfolio numérique conçu pour présenter mes projets d'ingénierie et de développement.",
+      "technologies": ["JavaScript", "Python", "GitHub", "Vercel"],
+      "type": "software",
+      "link": "https://github.com/MauriceELkouby/Maurice-Digital-Portfolio",
+      "image": "assets/Portfolio Home.webp"
+    },
+    {
+      "name": "Application de partage musical",
+      "description": "Application mobile de partage musical reposant sur Firebase.",
+      "technologies": ["Dart", "Android Studio", "Firebase", "GitHub"],
+      "type": "software",
+      "link": "https://github.com/MauriceELkouby/fm_radio",
+      "image": "assets/MusicApp.webp"
+    },
+    {
+      "name": "Game Jam : BalArena",
+      "description": "Jeu réalisé en sept jours dans le cadre du Juniper Dev Game Jam.",
+      "technologies": ["C#", "Unity", "2D et 3D"],
+      "type": "games",
+      "link": "https://mokoolb.itch.io/bal-arena",
+      "image": "assets/balarena.jpg"
+    },
+    {
+      "name": "Game Jam : Hades Needs Milk",
+      "description": "Jeu de type roguelite développé en solo et classé 10e parmi 86 participations.",
+      "technologies": ["C#", "Unity", "2D"],
+      "type": "games",
+      "link": "https://mokoolb.itch.io/hades-needs-milk",
+      "image": "assets/roguelite.jpg"
+    },
+    {
+      "name": "Game Jam : Single Mom In Your Area",
+      "featured": true,
+      "description": "Jeu d'horreur classé deuxième et lauréat du prix du jeu le plus créatif au McGame Jam.",
+      "technologies": ["C#", "Unity", "3D"],
+      "type": "games",
+      "link": "https://esmely11.itch.io/single-mom-in-your-area",
+      "image": "assets/singlemom.webp"
+    },
+    {
+      "name": "Game Jam : Newcomer",
+      "description": "Jeu de type bullet hell réalisé dans le cadre d'un game jam.",
+      "technologies": ["C#", "Unity", "3D"],
+      "type": "games",
+      "link": "https://mokoolb.itch.io/newcomer",
+      "image": "assets/newcomer.jpg"
+    },
+    {
+      "name": "Game Jam : Hero's Merchant",
+      "description": "Jeu de simulation de marchand réalisé dans le cadre d'un game jam.",
+      "technologies": ["C#", "Unity", "3D"],
+      "type": "games",
+      "link": "https://mokoolb.itch.io/herosmerchant",
+      "image": "assets/HerosMerchant.webp"
+    },
+    {
+      "name": "Game Jam : Prof 101",
+      "description": "Projet de game jam développé avec Unity.",
+      "technologies": ["C#", "Unity", "3D"],
+      "type": "games",
+      "link": "https://mokoolb.itch.io/prof-101",
+      "image": "assets/prof101.webp"
+    },
+    {
+      "name": "Game Jam : Chasmed",
+      "description": "Jeu Unity doté d'un monde généré de façon procédurale.",
+      "technologies": ["C#", "Unity", "IA", "Génération procédurale", "2D"],
+      "type": "games",
+      "link": "https://mokoolb.itch.io/chasm-ed",
+      "image": "assets/Chasmed.webp"
+    },
+    {
+      "name": "Game Jam : Woke",
+      "description": "Jeu de plateforme 2D développé dans le cadre d'un game jam.",
+      "technologies": ["C#", "Unity", "2D"],
+      "type": "games",
+      "link": "https://mokoolb.itch.io/woke",
+      "image": "assets/Woke.webp"
+    }
+  ]
+}
