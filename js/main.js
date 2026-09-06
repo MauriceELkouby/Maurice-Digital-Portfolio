@@ -97,7 +97,12 @@ function openDetails(item, kind, trigger) {
   }
 
   const content = createElement('div', 'detail-dialog-content');
-  const eyebrow = createElement('p', 'detail-dialog-eyebrow', kind === 'project' ? projectTypeLabel(item.type) : item.type === 'education' ? t('education') : t('experience'));
+  const detailType = kind === 'project'
+    ? projectTypeLabel(item.type)
+    : kind === 'certificate'
+      ? t('certification')
+      : item.type === 'education' ? t('education') : t('experience');
+  const eyebrow = createElement('p', 'detail-dialog-eyebrow', detailType);
   const title = createElement('h2', '', item.name || item.title || 'Details');
   title.id = 'detail-dialog-title';
   content.append(eyebrow, title);
@@ -109,7 +114,7 @@ function openDetails(item, kind, trigger) {
 
   content.append(createElement('p', 'detail-dialog-description', expandedDescription(item, kind)));
 
-  const skills = kind === 'project' ? item.technologies || [] : timelineSkills(item);
+  const skills = kind === 'project' ? item.technologies || [] : kind === 'timeline' ? timelineSkills(item) : [];
   if (skills.length) {
     const list = createElement('ul', 'technology-list');
     list.setAttribute('aria-label', kind === 'project' ? t('technologiesUsed') : t('areasOfFocus'));
@@ -118,7 +123,8 @@ function openDetails(item, kind, trigger) {
   }
 
   if (item.link) {
-    const link = createElement('a', 'button button-primary detail-dialog-link', kind === 'project' ? t('openFullProject') : t('visitOrganization'));
+    const linkLabel = kind === 'project' ? t('openFullProject') : kind === 'certificate' ? t('viewCertificate') : t('visitOrganization');
+    const link = createElement('a', 'button button-primary detail-dialog-link', linkLabel);
     link.href = item.link;
     link.target = '_blank';
     link.rel = 'noopener noreferrer';
@@ -164,6 +170,28 @@ function makeCardInteractive(card, item, kind) {
     if (event.key !== 'Enter' && event.key !== ' ') return;
     event.preventDefault();
     open();
+  });
+}
+
+function initializeCertificationCards() {
+  document.querySelectorAll('.cert-card').forEach((card) => {
+    const heading = card.querySelector('h3');
+    const summary = card.querySelector('p');
+    const image = card.querySelector('img');
+    const link = card.querySelector('a');
+    const item = {
+      title: heading?.textContent.trim() || t('certification'),
+      description: summary?.textContent.trim() || '',
+      image: image?.getAttribute('src') || '',
+      link: link?.getAttribute('href') || ''
+    };
+
+    summary?.remove();
+    link?.remove();
+    const detailsCue = createElement('span', 'card-details-cue', t('openDetails'));
+    detailsCue.setAttribute('aria-hidden', 'true');
+    card.append(detailsCue);
+    makeCardInteractive(card, item, 'certificate');
   });
 }
 
@@ -279,4 +307,5 @@ function formatDateRange(start, end) {
   return startText ? `${startText} – ${endText || t('present')}` : endText || '';
 }
 
+initializeCertificationCards();
 loadPortfolio();

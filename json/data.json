@@ -160,6 +160,14 @@
                 "image": "assets/MusicApp.webp"
             },
             {
+                "name": "GameJam: The False Crown",
+                "description": "7 day Brackey's Game Jam",
+                "technologies": [ "C#", "Unity", "2D" ],
+                "type": "games",
+                "link": "https://mokoolb.itch.io/bal-arena",
+                "image": "assets/FalseCrown.png"
+            },
+            {
                 "name": "GameJam: BalArena",
                 "description": "7 day Juniper Dev Game Jam",
                 "technologies": [ "C#", "Unity", "2D+3D" ],
