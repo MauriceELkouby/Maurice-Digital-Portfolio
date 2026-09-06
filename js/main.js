@@ -202,8 +202,6 @@ async function loadPortfolio() {
 
     const content = createElement('div', 'content');
     content.append(createElement('h3', '', project.name || 'Untitled project'));
-    content.append(createElement('p', 'project-summary', project.description || ''));
-
     const technologies = createElement('ul', 'technology-list');
     technologies.setAttribute('aria-label', t('technologiesUsed'));
     (project.technologies || []).forEach((technology) => {
