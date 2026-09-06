@@ -24,6 +24,7 @@
       "start": "2025-09",
       "end": "2028-12",
       "desc": "Robotics, Production, Industry 4.0, AI",
+      "skills": ["Robotics", "Production", "Industry 4.0", "AI"],
       "image": "assets/ets.png",
       "link": "https://www.etsmtl.ca/en"
     },
@@ -34,6 +35,7 @@
       "start": "2026-08",
       "end": "2026-12",
       "desc": "Developing client projects involving PLC, SCADA, and MES technologies.",
+      "skills": ["PLC", "SCADA", "MES", "Industrial software"],
       "image": "assets/centristech.jpg",
       "link": "https://centristech.com/"
     },
@@ -44,6 +46,7 @@
       "start": "2025-05",
       "end": "2025-08",
       "desc": "Automated internal processes (API, VB), testing scripts, and tooling.",
+      "skills": ["API development", "Visual Basic", "Testing", "Automation tooling"],
       "image": "assets/CGI.png",
       "link": "https://www.cgi.com/en"
     },
@@ -54,6 +57,7 @@
       "start": "2022-09",
       "end": "2025-06",
       "desc": "Robotics, Industry 4.0, PLC, SCADA",
+      "skills": ["Robotics", "Industry 4.0", "PLC", "SCADA"],
       "image": "assets/vanier.png",
       "link": "https://www.vaniercollege.qc.ca"
     },
@@ -64,6 +68,7 @@
       "start": "2024-06",
       "end": "2024-08",
       "desc": "Automated internal processes (SQL, Excel), testing scripts, and tooling.",
+      "skills": ["SQL", "Excel", "Testing", "Process automation"],
       "image": "assets/CGI.png",
       "link": "https://www.cgi.com/en"
     }

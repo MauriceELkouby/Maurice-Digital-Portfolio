@@ -53,6 +53,101 @@ function createElement(tag, className, text) {
   return element;
 }
 
+const detailDialog = createDetailDialog();
+let dialogTrigger = null;
+
+function createDetailDialog() {
+  const dialog = createElement('dialog', 'detail-dialog');
+  dialog.setAttribute('aria-labelledby', 'detail-dialog-title');
+
+  const panel = createElement('div', 'detail-dialog-panel');
+  const close = createElement('button', 'detail-dialog-close', '×');
+  close.type = 'button';
+  close.setAttribute('aria-label', 'Close details');
+  close.addEventListener('click', () => dialog.close());
+
+  const body = createElement('div', 'detail-dialog-body');
+  panel.append(close, body);
+  dialog.append(panel);
+  document.body.append(dialog);
+
+  dialog.addEventListener('click', (event) => {
+    if (event.target === dialog) dialog.close();
+  });
+  dialog.addEventListener('close', () => {
+    document.body.classList.remove('dialog-open');
+    dialogTrigger?.focus();
+  });
+  return dialog;
+}
+
+function openDetails(item, kind, trigger) {
+  dialogTrigger = trigger;
+  detailDialog.dataset.kind = kind;
+  const body = detailDialog.querySelector('.detail-dialog-body');
+  body.replaceChildren();
+
+  const visual = createElement('div', 'detail-dialog-visual');
+  if (item.image) {
+    const image = document.createElement('img');
+    image.src = item.image;
+    image.alt = `${item.name || item.org || item.title || 'Detail'} image`;
+    visual.append(image);
+  }
+
+  const content = createElement('div', 'detail-dialog-content');
+  const eyebrow = createElement('p', 'detail-dialog-eyebrow', kind === 'project' ? projectTypeLabel(item.type) : item.type === 'education' ? 'Education' : 'Experience');
+  const title = createElement('h2', '', item.name || item.title || 'Details');
+  title.id = 'detail-dialog-title';
+  content.append(eyebrow, title);
+
+  if (kind === 'timeline') {
+    if (item.org) content.append(createElement('p', 'detail-dialog-organization', item.org));
+    content.append(createElement('p', 'detail-dialog-date', formatDateRange(item.start, item.end)));
+  }
+
+  content.append(createElement('p', 'detail-dialog-description', expandedDescription(item, kind)));
+
+  const skills = kind === 'project' ? item.technologies || [] : timelineSkills(item);
+  if (skills.length) {
+    const list = createElement('ul', 'technology-list');
+    list.setAttribute('aria-label', kind === 'project' ? 'Technologies used' : 'Areas of focus');
+    skills.forEach((skill) => list.append(createElement('li', 'skill-bubble', skill)));
+    content.append(list);
+  }
+
+  if (item.link) {
+    const link = createElement('a', 'button button-primary detail-dialog-link', kind === 'project' ? (item.linkLabel || 'Open full project') : 'Visit organization');
+    link.href = item.link;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.append(document.createTextNode(' ↗'));
+    content.append(link);
+  }
+
+  body.append(visual, content);
+  document.body.classList.add('dialog-open');
+  detailDialog.showModal();
+  detailDialog.querySelector('.detail-dialog-close').focus();
+}
+
+function projectTypeLabel(type) {
+  return ({ sim: 'Industrial simulation', design: 'Engineering design', software: 'Software project', games: 'Game development' })[type] || 'Project';
+}
+
+function expandedDescription(item, kind) {
+  if (item.longDescription) return item.longDescription;
+  if (kind === 'timeline') return item.desc || '';
+  const technologyText = (item.technologies || []).join(', ');
+  const followUp = technologyText ? ` The work brings together ${technologyText} in one practical implementation.` : '';
+  return `${item.description || ''}${followUp}`;
+}
+
+function timelineSkills(item) {
+  if (Array.isArray(item.skills)) return item.skills;
+  return (item.desc || '').split(',').map((skill) => skill.trim().replace(/\.$/, '')).filter(Boolean);
+}
+
 async function loadPortfolio() {
   const grid = document.getElementById('project-cards');
   if (!grid) return;
@@ -96,14 +191,23 @@ async function loadPortfolio() {
     });
     content.append(technologies);
 
+    const actions = createElement('div', 'card-actions');
+    const detailsButton = createElement('button', 'card-detail-button', 'View details');
+    detailsButton.type = 'button';
+    detailsButton.setAttribute('aria-label', `View details for ${project.name || 'this project'}`);
+    detailsButton.addEventListener('click', () => openDetails(project, 'project', detailsButton));
+    actions.append(detailsButton);
+
     if (project.link) {
       const link = createElement('a', '', project.linkLabel || 'View project');
       link.href = project.link;
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
       link.append(document.createTextNode(' ↗'));
-      content.append(link);
+      actions.append(link);
     }
+
+    content.append(actions);
 
     card.append(picture, content);
     grid.append(card);
@@ -145,6 +249,11 @@ function renderTimeline(items) {
     if (item.org) content.append(createElement('p', 'organization', item.org));
     content.append(createElement('span', 'date', formatDateRange(item.start, item.end)));
     content.append(createElement('p', '', item.desc || ''));
+    const detailsButton = createElement('button', 'timeline-detail-button', 'View details');
+    detailsButton.type = 'button';
+    detailsButton.setAttribute('aria-label', `View details for ${item.title || item.org || 'this timeline entry'}`);
+    detailsButton.addEventListener('click', () => openDetails(item, 'timeline', detailsButton));
+    content.append(detailsButton);
     wrapper.append(content);
     container.append(wrapper);
     reveal(wrapper);
