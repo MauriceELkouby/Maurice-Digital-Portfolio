@@ -148,6 +148,24 @@ function timelineSkills(item) {
   return (item.desc || '').split(',').map((skill) => skill.trim().replace(/\.$/, '')).filter(Boolean);
 }
 
+function makeCardInteractive(card, item, kind) {
+  card.tabIndex = 0;
+  card.setAttribute('role', 'button');
+  card.setAttribute('aria-label', `Open details for ${item.name || item.title || item.org || 'this item'}`);
+
+  const open = () => openDetails(item, kind, card);
+  card.addEventListener('click', (event) => {
+    if (event.target.closest('a, button')) return;
+    open();
+  });
+  card.addEventListener('keydown', (event) => {
+    if (event.target.closest('a, button')) return;
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    event.preventDefault();
+    open();
+  });
+}
+
 async function loadPortfolio() {
   const grid = document.getElementById('project-cards');
   if (!grid) return;
@@ -192,11 +210,9 @@ async function loadPortfolio() {
     content.append(technologies);
 
     const actions = createElement('div', 'card-actions');
-    const detailsButton = createElement('button', 'card-detail-button', 'View details');
-    detailsButton.type = 'button';
-    detailsButton.setAttribute('aria-label', `View details for ${project.name || 'this project'}`);
-    detailsButton.addEventListener('click', () => openDetails(project, 'project', detailsButton));
-    actions.append(detailsButton);
+    const detailsCue = createElement('span', 'card-details-cue', 'Open details');
+    detailsCue.setAttribute('aria-hidden', 'true');
+    actions.append(detailsCue);
 
     if (project.link) {
       const link = createElement('a', '', project.linkLabel || 'View project');
@@ -210,6 +226,7 @@ async function loadPortfolio() {
     content.append(actions);
 
     card.append(picture, content);
+    makeCardInteractive(card, project, 'project');
     grid.append(card);
     reveal(card);
   });
@@ -249,12 +266,11 @@ function renderTimeline(items) {
     if (item.org) content.append(createElement('p', 'organization', item.org));
     content.append(createElement('span', 'date', formatDateRange(item.start, item.end)));
     content.append(createElement('p', '', item.desc || ''));
-    const detailsButton = createElement('button', 'timeline-detail-button', 'View details');
-    detailsButton.type = 'button';
-    detailsButton.setAttribute('aria-label', `View details for ${item.title || item.org || 'this timeline entry'}`);
-    detailsButton.addEventListener('click', () => openDetails(item, 'timeline', detailsButton));
-    content.append(detailsButton);
+    const detailsCue = createElement('span', 'card-details-cue', 'Open details');
+    detailsCue.setAttribute('aria-hidden', 'true');
+    content.append(detailsCue);
     wrapper.append(content);
+    makeCardInteractive(wrapper, item, 'timeline');
     container.append(wrapper);
     reveal(wrapper);
   });
