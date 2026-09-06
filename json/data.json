@@ -19,8 +19,8 @@
     "timeline": [
     {
       "type": "education",
-      "title": "B.Eng. – Automated Production Engineering (GPA)",
-      "org": "École de Téchnologie Superieur",
+      "title": "B.Eng. – Automated Production Engineering",
+      "org": "École de technologie supérieure",
       "start": "2025-09",
       "end": "2028-12",
       "desc": "Robotics, Production, Industry 4.0, AI",
@@ -33,7 +33,7 @@
       "org": "Centris Technologies",
       "start": "2026-08",
       "end": "2026-12",
-      "desc": "Developped projects for clients involving PLC, SCADA and MES",
+      "desc": "Developing client projects involving PLC, SCADA, and MES technologies.",
       "image": "assets/centristech.jpg",
       "link": "https://centristech.com/"
     },
@@ -49,7 +49,7 @@
     },
     {
       "type": "education",
-      "title": "DEC – Electrical Engineering Technology (Automation&Controls)",
+      "title": "DEC – Electrical Engineering Technology (Automation & Controls)",
       "org": "Vanier College",
       "start": "2022-09",
       "end": "2025-06",
@@ -71,35 +71,41 @@
         "projects": [
             {
                 "name": "Simulation of Automotive Assembly",
+                "featured": true,
+                "linkLabel": "View case study",
                 "description": "A factory simulation project for automotive assembly using Unity, PLCs, and GEMMA.",
                 "technologies": [ "Unity", "C#", "C++", "PLC", "GEMMA", "OPC UA", "Ignition", "MYSQL" ],
                 "type": "sim",
                 "link": "https://drive.google.com/drive/folders/1Y8s6SkZO-fFFpIx0wsETMNV8dad3PsW0?usp=sharing",
-                "image": "assets/car.png"
+                "image": "assets/car.webp"
             },
             {
                 "name": "Simulation of CNC",
+                "featured": true,
+                "linkLabel": "View case study",
                 "description": "CNC machine simulation using PLC, OPC UA, and FactoryIO with GEMMA methodology.",
                 "technologies": [ "PLC", "GEMMA", "OPC UA", "Ignition", "MYSQL", "FactoryIO" ],
                 "type": "sim",
                 "link": "https://drive.google.com/drive/folders/1mQm079HEIClcmgj07xEhXJ1l_QnODDye?usp=sharing",
-                "image": "assets/CNCSIM.png"
+                "image": "assets/CNCSIM.webp"
             },
             {
                 "name": "Simulation of Cascade Controlled PID",
+                "featured": true,
                 "description": "Simulation project of a cascade-controlled tank using FactoryIO and PID control.",
                 "technologies": [ "PLC", "PID", "HMI", "FactoryIO" ],
                 "type": "sim",
                 "link": "https://drive.google.com/drive/folders/1KEBzkox9bhez3gLPUu4nL7aHgjm00nmf?usp=sharing",
-                "image": "assets/Tank.png"
+                "image": "assets/Tank.webp"
             },
             {
                 "name": "RaspberryPi+LOGO Control Panel",
-                "description": "A design project integrating RaspberryPi with Siemens LOGO for hybrid control systems.",
+                "featured": true,
+                "description": "A design project integrating Raspberry Pi with Siemens LOGO! for hybrid control systems.",
                 "technologies": [ "Python", "Wiring", "MQTT", "Ignition" ],
                 "type": "design",
                 "link": "https://drive.google.com/drive/folders/16ob-_zK2tY3BsASLBeJTgN7N5cdVIUC1?usp=sharing",
-                "image": "assets/panel.jpg"
+                "image": "assets/panel.webp"
             },
             {
                 "name": "Power Grid Design",
@@ -115,7 +121,7 @@
                 "technologies": [ "AutoCad", "P&ID", "Loop Diagram" ],
                 "type": "design",
                 "link": "https://drive.google.com/drive/folders/1fbgr3ORwRIwthdDfo_lYDUvr-2aGOY0c?usp=sharing",
-                "image": "assets/SafetySystemDesign.png"
+                "image": "assets/SafetySystemDesign.webp"
             },
             {
                 "name": "Fullstack Banking application",
@@ -127,7 +133,7 @@
             },
             {
                 "name": "Custom Cloud Server",
-                "description": "Cloud server hosted locally with a raspberri pi, accessible anywhere with an custom application",
+                "description": "A locally hosted Raspberry Pi cloud server accessible through a custom application.",
                 "technologies": [ "C", "API development", "python", "Android Studio" ],
                 "type": "software",
                 "link": "https://drive.google.com/drive/folders/1maqHqKfwkAA1HiYp88NJlO-mPoOxFQGZ?usp=sharing",
@@ -135,19 +141,20 @@
             },
             {
                 "name": "Portfolio Website",
+                "featured": true,
                 "description": "Digital portfolio website showcasing my projects.",
-                "technologies": [ "Javascript", "Python", "Github", "Vercel" ],
+                "technologies": [ "JavaScript", "Python", "GitHub", "Vercel" ],
                 "type": "software",
                 "link": "https://github.com/MauriceELkouby/Maurice-Digital-Portfolio",
-                "image": "assets/Portfolio Home.png"
+                "image": "assets/Portfolio Home.webp"
             },
             {
                 "name": "Music Sharing App",
                 "description": "A mobile app for sharing music using Firebase.",
-                "technologies": [ "Dart", "Android Studio", "FireBase", "Github" ],
+                "technologies": [ "Dart", "Android Studio", "Firebase", "GitHub" ],
                 "type": "software",
                 "link": "https://github.com/MauriceELkouby/fm_radio",
-                "image": "assets/MusicApp.png"
+                "image": "assets/MusicApp.webp"
             },
             {
                 "name": "GameJam: BalArena",
@@ -159,7 +166,7 @@
             },
             {
                 "name": "GameJam: Hades Needs Milk",
-                "description": "10th/86 Game RogueLite built alone",
+                "description": "Solo-developed roguelite that placed 10th out of 86 entries.",
                 "technologies": [ "C#", "Unity", "2D" ],
                 "type": "games",
                 "link": "https://mokoolb.itch.io/hades-needs-milk",
@@ -167,11 +174,12 @@
             },
             {
                 "name": "GameJam: Single Mom In Your Area",
-                "description": "2nd place + Most creative: Horror game Mcgame Jam",
+                "featured": true,
+                "description": "Horror game that placed second and won Most Creative at McGame Jam.",
                 "technologies": [ "C#", "Unity", "3D" ],
                 "type": "games",
                 "link": "https://esmely11.itch.io/single-mom-in-your-area",
-                "image": "assets/singlemom.jpg"
+                "image": "assets/singlemom.webp"
             },
             {
                 "name": "GameJam: Newcomer",
@@ -187,7 +195,7 @@
                 "technologies": [ "C#", "Unity", "3D" ],
                 "type": "games",
                 "link": "https://mokoolb.itch.io/herosmerchant",
-                "image": "assets/HerosMerchant.png"
+                "image": "assets/HerosMerchant.webp"
             },
             {
                 "name": "GameJam: Prof 101",
@@ -195,7 +203,7 @@
                 "technologies": [ "C#", "Unity", "3D" ],
                 "type": "games",
                 "link": "https://mokoolb.itch.io/prof-101",
-                "image": "assets/prof101.png"
+                "image": "assets/prof101.webp"
             },
             {
                 "name": "GameJam: Chasmed",
@@ -203,7 +211,7 @@
                 "technologies": [ "C#", "Unity", "Ai", "World Gen", "2D" ],
                 "type": "games",
                 "link": "https://mokoolb.itch.io/chasm-ed",
-                "image": "assets/Chasmed.png"
+                "image": "assets/Chasmed.webp"
             },
             {
                 "name": "GameJam: Woke",
@@ -211,7 +219,7 @@
                 "technologies": [ "C#", "Unity", "2D" ],
                 "type": "games",
                 "link": "https://mokoolb.itch.io/woke",
-                "image": "assets/Woke.png"
+                "image": "assets/Woke.webp"
             }
         ]
 }

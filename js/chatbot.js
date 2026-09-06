@@ -1,4 +1,4 @@
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", function () {
   const sendBtn = document.getElementById("send-button");
   const userInput = document.getElementById("chat-input");
   const chatbotMessages = document.getElementById("chat-output");
@@ -19,6 +19,8 @@ window.onload = function () {
     const isOpen = chatbot.style.display === "block";
     chatbot.style.display = isOpen ? "none" : "block";
     chatToggle.setAttribute("aria-expanded", String(!isOpen));
+    chatbot.setAttribute("aria-hidden", String(isOpen));
+    if (!isOpen) userInput.focus();
     // hide nudge once they interact
     hideNudge(true);
   });
@@ -26,6 +28,8 @@ window.onload = function () {
   closeChat.addEventListener("click", () => {
     chatbot.style.display = "none";
     chatToggle.setAttribute("aria-expanded", "false");
+    chatbot.setAttribute("aria-hidden", "true");
+    chatToggle.focus();
   });
 
   /* ---------------- Send handlers ---------------- */
@@ -33,14 +37,14 @@ window.onload = function () {
     sendMessage();
   });
 
-  userInput.addEventListener("keypress", (event) => {
+  userInput.addEventListener("keydown", (event) => {
     if (event.key === "Enter") sendMessage();
   });
 
   async function sendMessage() {
     const userMessage = userInput.value;
     if (userMessage.trim()) {
-      chatbotMessages.innerHTML += `<div class="message user-message">${userMessage}</div>`;
+      appendMessage(userMessage, "user-message");
       chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
       userInput.value = "";
 
@@ -53,9 +57,16 @@ window.onload = function () {
       const answer = await getAnswer(userMessage);
 
       chatbotMessages.removeChild(loadingMessage);
-      chatbotMessages.innerHTML += `<div class="message bot-message">${answer}</div>`;
+      appendMessage(answer, "bot-message");
       chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
     }
+  }
+
+  function appendMessage(text, className) {
+    const message = document.createElement("div");
+    message.className = `message ${className}`;
+    message.textContent = text;
+    chatbotMessages.appendChild(message);
   }
 
   async function getAnswer(question) {
@@ -79,7 +90,7 @@ window.onload = function () {
   // - chat is closed
   // - user hasn’t seen it before
   // - user hasn’t interacted with the page (optional: hover cancels)
-  const nudgeDelayMs = 4000;
+  const nudgeDelayMs = 12000;
   let nudgeTimer = null;
 
   function scheduleNudge() {
@@ -105,15 +116,17 @@ window.onload = function () {
       hideNudge(true);
       chatbot.style.display = "block";
       chatToggle.setAttribute("aria-expanded", "true");
+      chatbot.setAttribute("aria-hidden", "false");
+      userInput.focus();
     });
   }
 
   chatToggle.addEventListener("mouseenter", () => hideNudge(true));
 
-  // Show on first load (with delay)
-  scheduleNudge();
+  // The launcher is intentionally quiet on first load so it does not compete
+  // with the portfolio's primary calls to action.
 
   closeChat.addEventListener("click", () => {
     if (localStorage.getItem(NUDGE_SEEN_KEY) !== "1") scheduleNudge();
   });
-};
+});
