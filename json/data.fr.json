@@ -65,7 +65,6 @@
       "name": "Simulation d'une chaîne d'assemblage automobile",
       "featured": true,
       "description": "Simulation d'une usine d'assemblage automobile réalisée avec Unity, des automates programmables et la méthode GEMMA.",
-      "longDescription": "Chocolates",
       "technologies": [ "Unity", "C#", "C++", "PLC", "GEMMA", "OPC UA", "Ignition", "MySQL" ],
       "type": "sim",
       "link": "https://drive.google.com/drive/folders/1Y8s6SkZO-fFFpIx0wsETMNV8dad3PsW0?usp=sharing",
